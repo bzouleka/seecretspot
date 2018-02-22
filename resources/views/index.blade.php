@@ -27,7 +27,7 @@
     </nav>
 
     <div class="container">
-
+<!--connexion via reseau sociaux-->
         <div class="row">
           <div class="col-lg-offset-2 col-lg-8  col-md-offset-2 col-md-6  col-s-offset-2 col-s-8 col-s-offset-2 " id="principal-block">
             <h1 id="titreindex"><i class="fa fa-diamond" aria-hidden="true"></i>SeecretSpot</h1>
