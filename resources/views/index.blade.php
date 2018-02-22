@@ -23,11 +23,11 @@
       </div>
     <nav class="row">
       <div class="col-xs-8" id="logo_title"><i class="fa fa-diamond" aria-hidden="true"></i><span class="hidden-xs">SeecretSpot</span></div>
-      <div class="col-xs-4" id="connexion"><a href="index.html"><span class="hidden-xs hidden-sm" id="se_connecter">Se Connecter</span><span class="visible-xs visible-sm"><i class="fa fa-sign-in" aria-hidden="true" id="se_connecter_resp"></i></span></a></div>
+      <div class="col-xs-4" id="connexion"><a href="index.html"><span class="hidden-xs hidden-sm" id="se_connecter">S'inscriregoiti</span><span class="visible-xs visible-sm"><i class="fa fa-sign-in" aria-hidden="true" id="se_connecter_resp"></i></span></a></div>
     </nav>
 
     <div class="container">
-<!--connexion via reseau sociaux-->
+
         <div class="row">
           <div class="col-lg-offset-2 col-lg-8  col-md-offset-2 col-md-6  col-s-offset-2 col-s-8 col-s-offset-2 " id="principal-block">
             <h1 id="titreindex"><i class="fa fa-diamond" aria-hidden="true"></i>SeecretSpot</h1>
