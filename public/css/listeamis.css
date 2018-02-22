@@ -1,0 +1,17 @@
+.male {
+    color: rgb(0, 162, 255);
+}
+
+.female {
+    color: rgb(253, 142, 160);
+}
+
+.tof {
+    border-radius: 3px;
+}
+
+.toto {
+    font-size: 1.2em; 
+    margin-top: 15%;
+    text-align: right;
+}

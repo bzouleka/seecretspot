@@ -1,0 +1,54 @@
+.imagesCarrousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+#prec {
+position: absolute;
+right: 0px;
+padding-top: 250%;
+width: 65%;
+}
+
+#suivant {
+    position: absolute;
+    left: 0px;
+    padding-top: 250%;
+    width: 65%;
+}
+
+button {
+    background-color: #FCF9F5;
+    border-color: #1F1E14;
+    border-radius: 1px 1px 1px 1px;
+}
+#boutons {
+    padding-top: 15px;
+    text-align: center;
+}
+
+#conteneur {
+    padding-top: 10px;
+}
+
+#imageCachee {
+    visibility: hidden;
+    width: 100%;
+}
+
+.ronds {
+    width: 28px;
+    height: 28px;
+    background: white;
+    color: black;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 13px;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 28px 28px 28px 28px;
+    margin-left: 3px;
+}
+
