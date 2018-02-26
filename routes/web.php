@@ -11,7 +11,7 @@
 |
 */
 
-Route::view('/', 'index')->name('index');
+
 
 
 
@@ -22,3 +22,6 @@ Route::get('/settings', 'SettingsController@create');
 
 Route::post('/signup', 'LoginController@store')->name('signup');
 
+Route::view('/', 'login');
+
+Route::get('/HomePage',['uses' => 'HomePageController@getHomePage', 'as' => 'getHomePage']);
