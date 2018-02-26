@@ -20,6 +20,7 @@ Route::get('/signup', 'SignUpController@create')->name('signup');
 
 Route::get('/settings', 'SettingsController@create')->name('settings');
 
+Route::get('/myProfile', 'MyProfileController@create')->name('profileUser');
 
 Route::get('/', 'SignUpController@store')->name('login');
 
