@@ -19,7 +19,7 @@
   <body id="index-page">
       <div class="element-with-video-bg jquery-background-video-wrapper">
           <video class="my-background-video jquery-background-video" loop autoplay muted poster="">
-              <source src="video/hd0941.mp4" type="video/mp4" class='un'></video>
+              <source src="/video/hd0941.mp4" type="video/mp4" class='un'></video>
       </div>
     <nav class="row">
       <div class="col-xs-8" id="logo_title"><i class="fa fa-diamond" aria-hidden="true"></i><span class="hidden-xs">SeecretSpot</span></div>

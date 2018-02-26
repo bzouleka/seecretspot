@@ -11,12 +11,23 @@
 |
 */
 
-Route::view('/', 'index')->name('getIndex');
 
-Route::get('/profil-visiteur', 'ProfilVisiteurController@create');
 
-Route::get('/inscription', 'InscriptionController@create');
+
+
+Route::get('/signup', 'LoginController@create');
+
+
+Route::get('/settings', 'SettingsController@create');
+
+Route::post('/signup', 'LoginController@store')->name('signup');
+
+Route::view('/', 'login');
+
+Route::get('/mon-profil', 'MonProfilController@create');
 
 Route::get('/message', 'MessageController@create');
 
-Route::get('/mon-profil', 'MonProfilController@create');
+Route::get('/profil-visiteur', 'ProfilVisiteurController@create');
+
+Route::get('/HomePage',['uses' => 'HomePageController@getHomePage', 'as' => 'getHomePage']);
