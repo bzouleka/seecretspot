@@ -22,7 +22,7 @@ Route::get('/settings', 'SettingsController@create');
 
 Route::post('/signup', 'LoginController@store')->name('signup');
 
-Route::view('/', 'login');
+Route::view('/', 'login')
 
 Route::get('/mon-profil', 'MonProfilController@create');
 
