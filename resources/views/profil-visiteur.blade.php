@@ -20,7 +20,7 @@
 
 <body>
 
-    @include(navbar)
+    @include('navbar')
 
     <div class="container">
         <section class="row">
