@@ -12,3 +12,6 @@
 */
 
 Route::view('/', 'index');
+
+Route::get('/myProfile', 'MyProfileController@get');
+Route::post('/myProfile', 'MyProfileController@post');
