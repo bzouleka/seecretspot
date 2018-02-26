@@ -15,10 +15,10 @@ class CreatePhotosTable extends Migration
     {
         Schema::create('photos', function (Blueprint $table) {
             $table->increments('id_photos');
-            $table->string('picture_name',100);
-            $table->date('picture_date');
-            $table->dateTime('publication_date');
-            $table->tinyInteger('priority');
+            $table->string('picture_name',100)->nullable();
+            $table->date('picture_date')->nullable();
+            $table->dateTime('publication_date')->nullable();
+            $table->tinyInteger('priority')->nullable();
             $table->integer('spot_id')->unsigned();
             $table->foreign('spot_id')->references('id_spot')->on('spots');
             $table->timestamps();
