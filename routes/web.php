@@ -11,4 +11,12 @@
 |
 */
 
-Route::view('/', 'index');
+Route::view('/', 'index')->name('getIndex');
+
+Route::get('/profil-visiteur', 'ProfilVisiteurController@create');
+
+Route::get('/inscription', 'InscriptionController@create');
+
+Route::get('/message', 'MessageController@create');
+
+Route::get('/mon-profil', 'MonProfilController@create');
