@@ -12,3 +12,5 @@
 */
 
 Route::view('/', 'login');
+
+Route::get('/HomePage',['uses' => 'HomePageController@getHomePage', 'as' => 'getHomePage']);
