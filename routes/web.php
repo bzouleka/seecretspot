@@ -11,4 +11,14 @@
 |
 */
 
-Route::view('/', 'index');
+Route::view('/', 'index')->name('index');
+
+
+
+Route::get('/signup', 'LoginController@create');
+
+
+Route::get('/settings', 'SettingsController@create');
+
+Route::post('/signup', 'LoginController@store')->name('signup');
+
