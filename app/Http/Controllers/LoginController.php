@@ -15,7 +15,6 @@ class LoginController extends Controller
     }
 
 
-
     public function store(UserRequest $request)
     {
         $user = new User();
@@ -25,7 +24,7 @@ class LoginController extends Controller
 
         $user->save();
 
-        if ($user->save()){
+        if ($user->save()) {
             $data = [
                 'user' => [
                     'username' => $request->input('username'),
@@ -33,13 +32,11 @@ class LoginController extends Controller
 
                 ],
             ];
-            return view('homepage', $data);
-        }
-        else{
-            return redirect()->route('login');
+            return view('HomePage', $data);
         }
     }
-
-
-
 }
+
+
+
+
