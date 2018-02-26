@@ -4,7 +4,7 @@
     <div class="col-xs-4">
         <ul id="menu_connect">
             <li class="menu_share"><a href="poster-une-photo.html" id="menu_lien_share"><span class="hidden-sm hidden-xs" id="menu_share_letter">Partager </span><i class="fa fa-camera-retro" aria-hidden="true" id="menu_share_icon"></i></a></li>
-            <li class="menu_icon"><a href="{{route("profilUser")}}" class="menu_lien"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+            <li class="menu_icon"><a href="{{route("profileUser")}}" class="menu_lien"><i class="fa fa-user" aria-hidden="true"></i></a></li>
             <li class="menu_icon"><a href="{{route('message')}}" class="menu_lien"><i class="fa fa-comments-o" aria-hidden="true"></i></a></li>
             <li class="menu_icon"><a href="resultats.html" class="menu_lien"><i class="fa fa-search" aria-hidden="true"></i></a></li>
             <li class="menu_icon"><a href="{{route('settings')}}" class="menu_lien"><i class="fa fa-cog" aria-hidden="true"></i></a></li>

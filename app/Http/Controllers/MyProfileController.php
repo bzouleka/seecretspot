@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class MyProfileController extends Controller
 {
-    public function get()
+    public function create()
     {
         return view('myProfile');
     }
