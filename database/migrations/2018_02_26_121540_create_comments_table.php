@@ -18,8 +18,8 @@ class CreateCommentsTable extends Migration
             $table->integer('id_user');
             $table->integer('id_spot');
             $table->text('content');
-            $table->foreign('id_user')->references('id')->('users');
-            $table->foreign('id_spot')->references('id')->('spots');
+            $table->foreign('id_user')->references('id_user')->on('users');
+            $table->foreign('id_spot')->references('id_spot')->on('spots');
         });
     }
 

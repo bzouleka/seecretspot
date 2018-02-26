@@ -18,7 +18,7 @@ class SettingsController extends Controller
     public function store(Request $request)
     {
 
-        $settings = new Settings();
+       /* $settings = new Settings();*/
 
 
     }

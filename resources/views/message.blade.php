@@ -18,7 +18,7 @@
 
 <body>
 
-      @include(navbar)
+      @include('navbar')
 
   <div class="container">
     <div class="row">

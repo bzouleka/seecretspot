@@ -7,7 +7,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 
-class LoginController extends Controller
+class SignUpController extends Controller
 {
     public function create()
     {

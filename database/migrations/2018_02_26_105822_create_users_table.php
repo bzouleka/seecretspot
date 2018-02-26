@@ -20,13 +20,13 @@ class CreateUsersTable extends Migration
             $table->string('email');
             $table->string('first_name');
             $table->string('last_name');
-            $table->date('date_of_birth');
-            $table->text('description');
-            $table->string('sex');
             $table->string('country');
-            $table->string('city');
-            $table->string('phone');
             $table->string('password');
+            $table->string('sex')->nullable()->change();
+            $table->string('phone')->nullable()->change();
+            $table->string('city')->nullable()->change();
+            $table->string('description')->nullable()->change();
+            $table->string('date_of birth')->nullable()->change();
 
         });
     }
