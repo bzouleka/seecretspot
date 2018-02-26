@@ -21,7 +21,7 @@
 
 <body>
     
-    @include(navbar)
+    @include('navbar')
 
     <div class="col-md-4" id="test">
         <img src="images/photo-profil-visiteur.jpg" alt="Phot de profil" width="40%" class="hidden-sm hidden-xs" />

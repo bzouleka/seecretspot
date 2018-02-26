@@ -15,14 +15,13 @@
 
 
 
-Route::get('/signup', 'LoginController@create');
+Route::post('/login', 'LoginController@create')->name('login');
 
+Route::view('/', 'login');
 
 Route::get('/settings', 'SettingsController@create');
 
-Route::post('/signup', 'LoginController@store')->name('signup');
-
-Route::view('/', 'login')
+Route::post('/signup', 'InscriptionController@store')->name('signup');
 
 Route::get('/mon-profil', 'MonProfilController@create');
 

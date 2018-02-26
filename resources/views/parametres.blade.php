@@ -22,7 +22,7 @@
 
 <body>
 
-  @include(navbar)
+  @include('navbar')
 
   <div class="container">
     <div id="formparametrediv" class="col-lg-offset-4 col-lg-6 col-lg-offset-4">

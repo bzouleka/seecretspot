@@ -29,7 +29,7 @@
   </head>
 
   <body>
-    @include(navbar)
+    @include('navbar')
 
     <h1>Mes centres d'intérêts</h1>
     <form  method="post" action="page-principale.html" class="container">
