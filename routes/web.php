@@ -36,3 +36,6 @@ Route::get('/Message', 'MessageController@create')->name('message');
 
 
 
+
+
+Route::get('/spot', ['uses' => 'SpotController@getNewSpot', 'as' => 'newSpot']);
