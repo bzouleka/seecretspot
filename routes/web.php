@@ -12,3 +12,12 @@
 */
 
 Route::view('/', 'index');
+
+
+
+
+
+
+
+
+Route::get('/HomePage',['uses' => 'HomePageController@getHomePage', 'as' => 'getHomePage']);
