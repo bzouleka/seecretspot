@@ -22,6 +22,7 @@ Route::get('/settings', 'SettingsController@create')->name('settings');
 
 Route::post('/hobbies', 'SettingsController@store')->name('hobbies');
 
+Route::get('/myProfile', 'MyProfileController@create')->name('profileUser');
 
 Route::get('/', 'SignUpController@store')->name('login');
 
@@ -37,3 +38,6 @@ Route::get('/Message', 'MessageController@create')->name('message');
 
 
 
+
+
+Route::get('/spot', ['uses' => 'SpotController@getNewSpot', 'as' => 'newSpot']);
