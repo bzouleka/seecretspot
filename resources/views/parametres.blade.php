@@ -27,7 +27,7 @@
   <div class="container">
     <div id="formparametrediv" class="col-lg-offset-4 col-lg-6 col-lg-offset-4">
       <div class="row">
-        <form id="formparametre" class="well" role="form" method="post" action="modif-parapmetre.php">
+        <form id="formparametre" class="well" role="form" method="post" action="{{ Route('hobbies') }}">
           <fieldset>
             <legend>
               <span class="hidden-xs">Parametre de votre </span>Compte</legend>
@@ -106,6 +106,8 @@
               <label for="not-sms"> Notification par SMS</label>
             </div>
             <br />
+            <input type="button" name="type"  value="Centre d'intérêts">
+
             <button type="submit">Enregistrer les modifications</button>
           </fieldset>
         </form>
