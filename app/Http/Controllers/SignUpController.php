@@ -9,6 +9,9 @@ use App\User;
 
 class SignUpController extends Controller
 {
+
+
+
     public function create()
     {
         return view('signUp');
