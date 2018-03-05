@@ -22,11 +22,11 @@ class CreateUsersTable extends Migration
             $table->string('last_name');
             $table->string('country');
             $table->string('password');
-            $table->string('sex')->nullable()->change();
-            $table->string('phone')->nullable()->change();
-            $table->string('city')->nullable()->change();
-            $table->string('description')->nullable()->change();
-            $table->string('date_of birth')->nullable()->change();
+            $table->string('sex')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('city')->nullable();
+            $table->string('description')->nullable();
+            $table->string('date_of birth')->nullable();
 
         });
     }
