@@ -1,26 +1,13 @@
-<!DOCTYPE HTML>
-<html lang="fr">
+@extends('template')
 
-<head>
-    <title>Bienvenue sur Seecretspot - Connectez-vous</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href= "{{ asset('css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto+Condensed" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+@section('head')
     <meta name="description" content="Bienvenue sur la plateforme SEECRETSPOT, partagez les lieux encore inconnus" />
     <meta name="keyword" content="reseau social,secret,spot,lieu,insolite,sport,paysage" />
     <meta name="robot" content="index,follow" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <script src="{{ asset('plugins/wheelzoom-master/wheelzoom.js') }}"></script>
-</head>
 
-<body>
+@endsection
 
-    @include('navbar')
-
+@section('contenu')
     <div class="container">
         <section class="row">
             <div class="col-md-4" id="test">
@@ -70,11 +57,14 @@
             </div>
         </section>
     </div>
+@endsection
 
-    <footer>
-
-    </footer>
-    <script src="{{ asset('js/mon-profil.js') }}"></script>
-</body>
-
-</html>
+@section('js')
+<!--
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js'></script>
+--> 
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src='plugins/wheelzoom-master/wheelzoom.js'></script>
+    <script src='js/mon-profil.js'></script>
+@endsection
