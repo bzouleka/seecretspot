@@ -28,21 +28,21 @@
           <i class="fa fa-diamond" aria-hidden="true"></i>
           <span class="hidden-sm hidden-xs">Publier votre nouveau Seecret Spot</span>
         </h2>
-        <form method="post" action=".php">
+        <form method="post" action="{{ route('newPost') }}" enctype="multipart/form-data">
+          @csrf
           <div class="col-xs-12">
 
-            <input type="text" name="contact" id="contact" placeholder="Nommez votre Spot">
+            <input type="text" name="title" id="contact" placeholder=" Nom du Spot" style="border-radius: 3px;">
           </div>
           <div class="col-xs-12">
-            <textarea name="message" id="message" placeholder="Décrivez votre Seecret Spot"></textarea>
+            <textarea name="description" id="message" placeholder="Description" style="border-radius: 3px;"></textarea>
           </div>
-          <div class="col-xs-12">
-          <label for="spotPicture">Photo de mon Spot (tous formats | max. 10 Mo) :</label><br />
-          <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
-          <input type="file" name="spotPicture" id="spotPicture" />
+          <div class="col-xs-6">
+            <label for="spotPicture">Photo du Spot (Format Jpeg | max. 2 Mo) :</label>
+            <input type="file" name="spotPicture" id="spotPicture" accept="image/jpeg"/>
           </div>
-          <div class="col-xs-12">
-            <input type="submit" value="Envoyer" id="bouton-message" />
+          <div class="col-xs-6" style="text-align: right; ">
+            <input type="submit" value="Envoyer" id="send-spot" />
           </div>
         </form>
       </section>
