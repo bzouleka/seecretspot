@@ -23,7 +23,7 @@ Route::post('/', 'SignUpController@store')->name('login');
 Route::post('/hobbies', 'SettingsController@store')->name('hobbies');
 
 Route::get('/myProfile', 'MyProfileController@create')->name('profileUser');
-
+Route::post('/myProfile', 'MyProfileController@post')->name('profileUserPost');
 
 Route::get('/HomePage',['uses' => 'HomePageController@getHomePage', 'as' => 'getHomePage']);
 
