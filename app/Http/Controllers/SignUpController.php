@@ -19,7 +19,7 @@ class SignUpController extends Controller
 
 
 
-    public function store (Request $request)
+    public function store (UserRequest $request)
     {
         $user = new User();
         $user->email = $request['email'];
