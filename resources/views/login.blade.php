@@ -19,11 +19,11 @@
   <body id="index-page">
       <div class="element-with-video-bg jquery-background-video-wrapper">
           <video class="my-background-video jquery-background-video" loop autoplay muted poster="">
-              <source src="video/hd0941.mp4" type="video/mp4" class='un'></video>
+              <source src="/video/hd0941.mp4" type="video/mp4" class='un'></video>
       </div>
     <nav class="row">
       <div class="col-xs-8" id="logo_title"><i class="fa fa-diamond" aria-hidden="true"></i><span class="hidden-xs">SeecretSpot</span></div>
-      <div class="col-xs-4" id="connexion"><a href="index.html"><span class="hidden-xs hidden-sm" id="se_connecter">S'inscrire</span><span class="visible-xs visible-sm"><i class="fa fa-sign-in" aria-hidden="true" id="se_connecter_resp"></i></span></a></div>
+      <div class="col-xs-4" id="connexion"><a href="{{route('signup')}}"><span class="hidden-xs hidden-sm" id="se_connecter">S'inscrire</span><span class="visible-xs visible-sm"><i class="fa fa-sign-in" aria-hidden="true" id="se_connecter_resp"></i></span></a></div>
     </nav>
 
     <div class="container">
@@ -61,7 +61,8 @@
 
             </aside>
               <aside class="col-lg-6 col-md-6 col-s-6">
-                <form method="post" action="page-principale.html" class="well" id="font-index">
+                <form method="post" action="{{route('postLogin')}}" class="well" id="font-index">
+                    @csrf
                  <fieldset>
                  <h2> Déjà membre ?</h2>
                  <label for="identifiants"> Identifiants </label>
@@ -71,6 +72,7 @@
                  <input id="password" type="password" class="form-control" >
                  <br>
                  <input type="submit" value="Envoyer" id="bouton-inscription-home"/>
+
                  </fieldset>
                </form>
               </aside>

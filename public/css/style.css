@@ -19,7 +19,7 @@
 {
   border: 1px #efefef solid;
   width: 100%;
-  height: 420px;
+  height: 100%;
   background: #e6e6e6;
   margin-top: 8%;
 }
@@ -29,6 +29,19 @@
   width: 90px;
   height: 15%;
   margin: 5% 5% 5% 0%;
+  padding: 8px 8px 8px 12px;
+  background: black;
+  border: 1px black solid;
+  border-radius: 4px;
+  text-align: center;
+  color: white;
+}
+
+#send-spot
+{
+  width: 90px;
+  height: 15%;
+  margin-top: 5px;
   padding: 8px 8px 8px 12px;
   background: black;
   border: 1px black solid;
@@ -410,4 +423,8 @@ padding-left: 20px;
 .element-with-video-bg
 {
   opacity: 0.87;
+}
+
+.invalid-feedback{
+  color: red;
 }

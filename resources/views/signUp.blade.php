@@ -19,7 +19,7 @@
 
     <nav class="row">
       <div class="col-xs-8" id="logo_title"><i class="fa fa-diamond" aria-hidden="true"></i><span class="hidden-xs">SeecretSpot</span></div>
-      <div class="col-xs-4" id="connexion"><a href="index.html"><span class="hidden-xs hidden-sm" id="se_connecter">Se Connecter</span><span class="visible-xs visible-sm"><i class="fa fa-sign-in" aria-hidden="true" id="se_connecter_resp"></i></span></a></div>
+      <div class="col-xs-4" id="connexion"><a href="{{route('login')}}"><span class="hidden-xs hidden-sm" id="se_connecter">Se Connecter</span><span class="visible-xs visible-sm"><i class="fa fa-sign-in" aria-hidden="true" id="se_connecter_resp"></i></span></a></div>
     </nav>
 
 
@@ -27,20 +27,36 @@
 
   <div class="col-lg-offset-3 col-lg-6 col-lg-offset-3 col-md-offset-3 col-md-6 col-md-offset-3 col-sm-offset-3 col-sm-6 col-sm-offset-3">
     <h1 id="titre-inscription">Inscription</h1>
-    <form method="post" action="centres-d-interets.html" class="well" id="font-inscription">
+    <form method="post" action="{{route('postSignup')}}" class="well" id="font-inscription">
     <fieldset>
       <label for="email"> Email </label>
-      <input id="email" type="text" class="form-control" placeholder="Ex: jeanmicheldu74@gmail.com" required>
-      <label for="nom"> Nom complet </label>
-      <input id="nom" type="text" class="form-control" placeholder="Ex: Bob l'éponge">
+        <input id="email" type="text" class="form-control" placeholder="Ex: jeanmicheldu74@gmail.com" name = "email" required>
+            {!! $errors->first('email', '<div class="invalid-feedback">:message</div>') !!}
+
+      <label for="nom"> Prénom </label>
+        <input id="nom" type="text" class="form-control" placeholder="Prénom" name="first_name">
+            {!! $errors->first('first_name', '<div class="invalid-feedback">:message</div>') !!}
+
+      <label for="nom"> Nom </label>
+        <input id="nom" type="text" class="form-control" placeholder="Nom" name="last_name">
+            {!! $errors->first('last_name', '<div class="invalid-feedback">:message</div>') !!}
+
       <label for="nomutilisateur"> Nom d'utilisateur </label>
-      <input id="nomutilisateur" type="text" class="form-control" placeholder="Ex: JeanKevin74" required>
+        <input id="nomutilisateur" type="text" class="form-control" name = "user_name" placeholder="Ex: JeanKevin74" required>
+            {!! $errors->first('user_name', '<div class="invalid-feedback">:message</div>') !!}
+
       <label for="listpays"> Pays d'origine </label>
-      <select class="form-control" id="listpays" ></select>
+        <select class="form-control" id="listpays" name = "country" ></select>
+
       <label for="password"> Mot de passe </label>
-      <input id="password" type="password" class="form-control" required >
+        <input id="password" type="password" class="form-control" name = "password"  required >
+            {!! $errors->first('password', '<div class="invalid-feedback">:message</div>') !!}
+      <label for="password"> Confirmation mot de passe </label>
+      <input id="password" type="password" class="form-control" name = "password_confirmation" required >
+        {!! $errors->first('password_confirmation', '<div class="invalid-feedback">:message</div>') !!}
       <br />
       <input type="submit" value="Envoyer" id="bouton-inscription"/>
+      @csrf
 
       <input type="checkbox" required> J'accepte
     </fieldset>
