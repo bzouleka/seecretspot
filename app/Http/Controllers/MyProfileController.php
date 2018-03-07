@@ -19,13 +19,13 @@ class MyProfileController extends Controller
     {
 //      look for users's spots
         $spots = DB::table('spots')
-            ->select(db::raw('spots.id_spot,picture_name,description_post,count(likes.id_user) as likes_count'))
-            ->join('photos','spots.id_spot','=','photos.spot_id')
-            ->leftjoin('likes','spots.id_spot','=','likes.id_spot')
+            ->select(db::raw('spots.id,picture_name,description_post,count(likes.id_user) as likes_count'))
+            ->join('photos','spots.id','=','photos.spot_id')
+            ->leftjoin('likes','spots.id','=','likes.id_spot')
             ->where('user_id','=',1)
             ->whereNotNull ('priority')
-            ->groupBy('spots.id_spot','picture_name','description_post')
-            ->orderBy('spots.id_spot','desc')
+            ->groupBy('spots.id','picture_name','description_post')
+            ->orderBy('spots.id','desc')
             ->get();
 
         //dd ($spots);
