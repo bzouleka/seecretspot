@@ -24,7 +24,7 @@
     <div class="container">
       <header class="row">
         <h1 class="col-xs-12">Chercher votre futur Seecret Spot</h1>
-        <form method="post" action="resultats.html" class="col-xs-12"  id="form-recherche">
+        <form method="get" action="{{route('results')}}" class="col-xs-12"  id="form-recherche">
           <input type="search" name="barre-de-recherche" id="barre-de-recherche" placeholder="Rechercher">
           <input type="submit" class="btn fa-input" value="&#xf002;"  id="bouton-recherche"/>
         </form>

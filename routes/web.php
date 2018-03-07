@@ -37,7 +37,7 @@ Route::post('/spot',['uses' => 'SpotController@store', 'as' => 'postSpot']);
 Route::get('/results', ['uses' => 'ResultsController@create', 'as' => 'results']);
 
 // à Voir plus tard
-Route::get('/Message', 'MessageController@create')->name('message');
+Route::get('/message', 'MessageController@create')->name('message');
 
 Route::get('/hobbies', 'SettingsController@create')->name('hobbies');
 Route::post('/hobbies', 'SettingsController@store')->name('postHobbies');
