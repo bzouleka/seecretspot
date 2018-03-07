@@ -424,3 +424,7 @@ padding-left: 20px;
 {
   opacity: 0.87;
 }
+
+.error{
+  color: red;
+}

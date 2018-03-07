@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
-use App\User;
+use app\Http\Requests\UserRequest;
+use app\User;
 
 class SignUpController extends Controller
 {
