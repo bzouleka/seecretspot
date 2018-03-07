@@ -11,11 +11,11 @@ class SettingsController extends Controller
 {
     public function create()
     {
-        return view('parametres');
+        return view('settings');
     }
 
 
-    public function store(Request $request)
+    public function update(Request $request)
     {
 
        /* $settings = new Settings();*/
