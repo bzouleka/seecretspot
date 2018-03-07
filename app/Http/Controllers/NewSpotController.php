@@ -43,7 +43,7 @@ class NewSpotController extends Controller
             $picture->setAttribute('picture_name', $filename);
             $picture->setAttribute('priority',1);
             if ($spot->photos()->save($picture)) {
-                return redirect()->route('profileUser');
+                return redirect()->route('myProfile');
             } else {
                 throw new InternalErrorException();
             }
