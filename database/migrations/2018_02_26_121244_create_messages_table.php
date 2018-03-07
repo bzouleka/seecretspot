@@ -19,8 +19,7 @@ class CreateMessagesTable extends Migration
             $table->integer('id_user2');
             $table->foreign('id_user2')->references('id')->on('users');
             $table->timestamps();
-            $table->dateTime('date_message');
-            $table->longText('contenu');
+            $table->text('contenu');
         });
     }
 
