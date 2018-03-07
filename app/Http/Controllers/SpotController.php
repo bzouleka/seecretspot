@@ -40,7 +40,7 @@ class SpotController extends Controller
             $picture = new Photo();
             $picture->setAttribute('picture_name', $filename);
             if ($spot->photos()->save($picture)) {
-                return view('myProfile');
+                return redirect()->route('profileUser');
             } else {
                 throw new InternalErrorException();
             }
