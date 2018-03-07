@@ -16,9 +16,9 @@ class CreateLikesTable extends Migration
         Schema::create('likes', function (Blueprint $table) {
             $table->timestamps();
             $table->integer('id_user');
-            $table->foreign('id_user')->references('id_user')->on('users');
+            $table->foreign('id_user')->references('id')->on('users');
             $table->integer('id_spot');
-            $table->foreign('id_spot')->references('id_spot')->on('spots');
+            $table->foreign('id_spot')->references('id')->on('spots');
         });
     }
 

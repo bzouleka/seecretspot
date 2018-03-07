@@ -22,7 +22,7 @@
 
   <div class="container">
     <div class="row">
-
+   
       <section class="col-xs-offset-2 col-xs-8">
         <h2>
           <i class="fa fa-diamond" aria-hidden="true"></i>
