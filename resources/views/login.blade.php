@@ -66,7 +66,7 @@
                  <fieldset>
                  <h2> Déjà membre ?</h2>
                  <label for="identifiants"> Identifiants </label>
-                 <input id="identifiants" type="text" class="form-control">
+                 <input id="identifiants" type="text" class="form-control {{ $errors->has('user_name') ? 'is-invalid' : '' }}" value="{{ old('user_name') }}">
                  <br >
                  <label for="password"> Mot de passe </label>
                  <input id="password" type="password" class="form-control" >
