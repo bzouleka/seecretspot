@@ -30,7 +30,7 @@
                     <br/>#surf #glisse #montagne</div>
             </div>
             <div class="col-md-8">
-                <form method="post" action="resultats.html" id="form-recherche">
+                <form method="post" action="{{ route('results') }}" id="form-recherche">
                     <input type="text" name="barre-de-recherche" id="barre-de-recherche" placeholder="Rechercher" />
                     <input type="submit" class="btn fa-input" value="&#xf002;" id="bouton-recherche" />
                 </form>
