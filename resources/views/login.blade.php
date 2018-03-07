@@ -61,7 +61,7 @@
 
             </aside>
               <aside class="col-lg-6 col-md-6 col-s-6">
-                <form method="post" action="{{route('homePage')}}" class="well" id="font-index">
+                <form method="post" action="{{route('postLogin')}}" class="well" id="font-index">
                     @csrf
                  <fieldset>
                  <h2> Déjà membre ?</h2>

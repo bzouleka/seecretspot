@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
-use app\Http\Requests\UserRequest;
-use app\User;
+use App\Http\Requests\UserRequest;
+use App\User;
 
 class SignUpController extends Controller
 {
@@ -33,6 +33,6 @@ class SignUpController extends Controller
 
         $user->save();
 
-        return redirect()->route('login');
+        return redirect( )->route('login');
     }
 }

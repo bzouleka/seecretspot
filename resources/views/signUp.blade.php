@@ -27,7 +27,7 @@
 
   <div class="col-lg-offset-3 col-lg-6 col-lg-offset-3 col-md-offset-3 col-md-6 col-md-offset-3 col-sm-offset-3 col-sm-6 col-sm-offset-3">
     <h1 id="titre-inscription">Inscription</h1>
-    <form method="post" action="{{route('login')}}" class="well" id="font-inscription">
+    <form method="post" action="{{route('postSignup')}}" class="well" id="font-inscription">
     <fieldset>
       <label for="email"> Email </label>
         <input id="email" type="text" class="form-control" placeholder="Ex: jeanmicheldu74@gmail.com" name = "email" required>
