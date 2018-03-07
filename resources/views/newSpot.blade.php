@@ -28,7 +28,7 @@
           <i class="fa fa-diamond" aria-hidden="true"></i>
           <span class="hidden-sm hidden-xs">Publier votre nouveau Seecret Spot</span>
         </h2>
-        <form method="post" action="{{ route('newPost') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('postNewSpot') }}" enctype="multipart/form-data">
           @csrf
           <div class="col-xs-12">
 
