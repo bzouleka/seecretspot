@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/login', 'SignUpController@create')->name('login');
-Route::post('/login', 'SignUpController@store')->name('postLogin');
+Route::get('/login', 'LoginController@create')->name('login');
+Route::post('/login', 'LoginController@store')->name('postLogin');
 
 Route::get('/signup', 'SignUpController@create')->name('signup');
 Route::post('/signup', 'SignUpController@store')->name('postSignup');

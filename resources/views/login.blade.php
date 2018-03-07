@@ -61,8 +61,8 @@
 
             </aside>
               <aside class="col-lg-6 col-md-6 col-s-6">
-                <form method="post" action="{{route('HomePage')}}" class="well" id="font-index">
-                    {{ csrf_field() }}
+                <form method="post" action="{{route('postLogin')}}" class="well" id="font-index">
+                    @csrf
                  <fieldset>
                  <h2> Déjà membre ?</h2>
                  <label for="identifiants"> Identifiants </label>

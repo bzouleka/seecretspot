@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 use App\User;
 
 class SignUpController extends Controller
@@ -19,7 +20,7 @@ class SignUpController extends Controller
 
 
 
-    public function store (Request $request)
+    public function store (UserRequest $request)
     {
         $user = new User();
         $user->email = $request['email'];
@@ -32,6 +33,6 @@ class SignUpController extends Controller
 
         $user->save();
 
-        return redirect()->route('login');
+        return redirect( )->route('login');
     }
 }
