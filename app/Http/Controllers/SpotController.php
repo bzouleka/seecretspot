@@ -25,9 +25,9 @@ class SpotController extends Controller
     public function storeSpot(NewSpotValidation $request)
     {
         $file = $request->file('spotPicture');
-        $filename = md5(uniqid()) . '.jpg';
+        $filename = 'public/spots/' . md5(uniqid()) . '.jpg';
         if ($file) {
-            Storage::disk('local')->put('public/spots/' . $filename, File::get($file));
+            Storage::disk('local')->put($filename, File::get($file));
         }
 
         $spot = new Spot();
@@ -39,8 +39,10 @@ class SpotController extends Controller
         if ($spot->save()) {
             $picture = new Photo();
             $picture->setAttribute('picture_name', $filename);
+            $picture->setAttribute('priority',1);
             if ($spot->photos()->save($picture)) {
-                return view('myProfile');
+                return redirect()->route('profileUser');
+                // return view('myProfile');
             } else {
                 throw new InternalErrorException();
             }

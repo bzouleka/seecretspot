@@ -1,12 +1,5 @@
 @extends('template')
 
-@section('head')
-    <meta name="description" content="Bienvenue sur la plateforme SEECRETSPOT, partagez les lieux encore inconnus" />
-    <meta name="keyword" content="reseau social,secret,spot,lieu,insolite,sport,paysage" />
-    <meta name="robot" content="index,follow" />
-
-@endsection
-
 @section('contenu')
     <div class="container">
         <section class="row">
