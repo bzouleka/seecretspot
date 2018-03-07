@@ -31,33 +31,29 @@
     <fieldset>
       <label for="email"> Email </label>
         <input id="email" type="text" class="form-control" placeholder="Ex: jeanmicheldu74@gmail.com" name = "email" required>
-          @if($errors->has('email'))
-              <p class="error">{{ $errors->first('email')}}</p>
-          @endif
+            {!! $errors->first('email', '<div class="invalid-feedback">:message</div>') !!}
+
       <label for="nom"> Prénom </label>
         <input id="nom" type="text" class="form-control" placeholder="Prénom" name="first_name">
-          @if($errors->has('first_name'))
-            <p class="error">{{ $errors->first('first_name')}}</p>
-          @endif
+            {!! $errors->first('first_name', '<div class="invalid-feedback">:message</div>') !!}
+
       <label for="nom"> Nom </label>
         <input id="nom" type="text" class="form-control" placeholder="Nom" name="last_name">
-          @if($errors->has('last_name'))
-            <p class="error">{{ $errors->first('last_name')}}</p>
-          @endif
+            {!! $errors->first('last_name', '<div class="invalid-feedback">:message</div>') !!}
+
       <label for="nomutilisateur"> Nom d'utilisateur </label>
         <input id="nomutilisateur" type="text" class="form-control" name = "user_name" placeholder="Ex: JeanKevin74" required>
-          @if($errors->has('user_name'))
-            <p class="error">{{ $errors->first('user_name')}}</p>
-          @endif
+            {!! $errors->first('user_name', '<div class="invalid-feedback">:message</div>') !!}
+
       <label for="listpays"> Pays d'origine </label>
         <select class="form-control" id="listpays" name = "country" ></select>
+
       <label for="password"> Mot de passe </label>
         <input id="password" type="password" class="form-control" name = "password"  required >
-          @if($errors->has('password'))
-            <p class="error">{{ $errors->first('password')}}</p>
-          @endif
+            {!! $errors->first('password', '<div class="invalid-feedback">:message</div>') !!}
       <label for="password"> Confirmation mot de passe </label>
-      <input id="password" type="password" class="form-control" name = "confirm_password" required >
+      <input id="password" type="password" class="form-control" name = "password_confirmation" required >
+        {!! $errors->first('password_confirmation', '<div class="invalid-feedback">:message</div>') !!}
       <br />
       <input type="submit" value="Envoyer" id="bouton-inscription"/>
       @csrf
