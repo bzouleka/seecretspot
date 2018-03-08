@@ -89,7 +89,7 @@
               <img src="{{ asset($spot->picture_name) }}" alt="{{ asset($spot->title) }}" style="width: 100%" class="photo-spot">
             </div>
             <div class="col-xs-3">
-              <div class="hashtag">{{ $spot->user_name }}</div>
+              <div class="hashtag"><a href="{{ route('userProfile',[$spot->user_id]) }}">{{ $spot->user_name }}</a></div>
             </div>
             <div class="col-xs-6">
               <div class="hashtag">{{ $spot->title }}</div>

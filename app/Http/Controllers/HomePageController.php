@@ -23,12 +23,12 @@ public function create()
                 
 //      look for users's spots
         $spots = DB::table('spots')
-            ->select(db::raw('spots.id,spots.title,photos.picture_name,description_post,user_name,count(likes.id_user) as likes_count'))
+            ->select(db::raw('spots.id,spots.title,photos.picture_name,description_post,user_id,user_name,count(likes.id_user) as likes_count'))
             ->join('users','spots.user_id','=','users.id')
             ->join('photos','spots.id','=','photos.spot_id')
             ->leftjoin('likes','spots.id','=','likes.id_spot')
             ->whereNotNull ('priority')
-            ->groupBy('spots.id','spots.title','photos.picture_name','description_post','user_name')
+            ->groupBy('spots.id','spots.title','photos.picture_name','description_post','user_id','user_name')
             ->orderBy('spots.id','desc')
             ->get();
 
