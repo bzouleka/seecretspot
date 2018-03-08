@@ -16,9 +16,9 @@ class CreateSpotInterestsTable extends Migration
         Schema::create('spot_interests', function (Blueprint $table) {
             $table->timestamps();
             $table->integer('id_spot');
-            $table->foreign('id_spot')->references('id')->on('spots');
+            //$table->foreign('id_spot')->references('id')->on('spots');
             $table->integer('id_interest');
-            $table->foreign('id_interest')->references('id')->on('interests');
+            //$table->foreign('id_interest')->references('id')->on('interests');
         });
     }
 
