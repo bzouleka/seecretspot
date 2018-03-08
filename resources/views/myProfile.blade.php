@@ -6,7 +6,27 @@
             <div class="col-md-4" id="test">
               <div class="row">
                 <div class="col-md-6">
-                    <img src="{{ asset($user['picture_name']) }} " alt="Phot de profil" width="100%" class="hidden-sm hidden-xs" />
+                    <br/>
+                    <img src="{{ asset($user['picture_name']) }} " alt="Phot de profil" width="100%" />
+                </div>
+                <div class="col-md-6">
+                    <h4>{{ $user['user_name'] }} <a href="{{ route('settings') }}"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></h3>
+                    <form method="post" action="{{ route('postMyProfile') }}" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                        <input type="file" name="myFile" placeholder="Choisissez votre photo"/>
+                        <textarea name="description" id="ameliorer" rows="2" cols="33" value="{{ $user['description'] }}" 
+                                  placeholder = "Description...">{{ $user['description'] }}</textarea><br>
+                        <input type="submit" value="Envoyer" />
+                    </form>
+                </div>           
+              </div> 
+<!--                <div><br/>Contactez moi pour partager<br/>#surf #glisse #montagne</div>   -->
+            </div>
+
+<!--            <div class="col-md-4" id="test">
+              <div class="row">
+                <div class="col-md-6">
+                    <img src="{{ asset($user['picture_name']) }} " alt="Phot de profil" width="100%" />
                 </div>
                 <div class="col-md-6">
                     <form method="post" action="{{ route('postMyProfile') }}" enctype="multipart/form-data">
@@ -21,6 +41,7 @@
                 <h3>{{ $user['user_name'] }} <a href="{{ asset('parametres.html')}}"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></h3>
                 <div>{{ $user['description'] }}<br/>Contactez moi pour partager<br/>#surf #glisse #montagne</div>
             </div>
+  -->
             <div class="col-md-8">
 
                 @foreach ($spots as $spot)
