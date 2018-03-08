@@ -12,5 +12,10 @@ class User extends Model implements Authenticatable
 
     protected $fillable = ['user_name', 'password'];
 
+    public function getRememberTokenName()
+    {
+        return '';
+    }
+
 
 }
