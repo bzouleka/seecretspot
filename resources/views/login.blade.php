@@ -50,7 +50,7 @@
                  </li>
 
                  <li>
-                   <a class="btn btn-default" href="inscription.html" id="bouton-mail">
+                   <a class="btn btn-default" href="{{route('signup')}}" id="bouton-mail">
                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
                    Email </a>
                 </li>
@@ -66,10 +66,11 @@
                  <fieldset>
                  <h2> Déjà membre ?</h2>
                  <label for="identifiants"> Identifiants </label>
-                 <input id="identifiants" type="text" class="form-control">
+                 <input id="identifiants" type="text" name="user_name" class="form-control {{ $errors->has('user_name') ? 'is-invalid' : '' }}" value="{{ old('user_name') }}">
+                     {!! $errors->first('user_name', '<div class="invalid-feedback">:message</div>') !!}
                  <br >
                  <label for="password"> Mot de passe </label>
-                 <input id="password" type="password" class="form-control" >
+                 <input id="password" type="password" name="password" class="form-control" >
                  <br>
                  <input type="submit" value="Envoyer" id="bouton-inscription-home"/>
 

@@ -27,48 +27,50 @@
   <div class="container">
     <div id="formparametrediv" class="col-lg-offset-4 col-lg-6 col-lg-offset-4">
       <div class="row">
-        <form id="formparametre" class="well" role="form" method="post" action="{{ Route('hobbies') }}">
+        <form id="formparametre" class="well" role="form" method="post" action="{{ Route('postSettings') }}">
           <fieldset>
+            @csrf
             <legend>
               <span class="hidden-xs">Parametre de votre </span>Compte</legend>
 
             <div class="form-group">
               <label for="nom">Nom</label>
-              <input type="text" name="nom" id="nom" class="form-control" required pattern="[A-Za-z]{1}[A-Za-z-']{1,28}[A-Za-z]{1}" data-pattern-error="Uniquement des caractères alphabétiques et éventuellement - ou '"
-                placeholder="Votre nom" />
-              <div class="help-block with-errors"></div>
+              <input type="text" name="last_name" id="nom" class="form-control"  placeholder="Votre nom" value="{{ $user['last_name']}}"/>
             </div>
+              <div class="help-block with-errors"></div>
             <br />
             <div class="form-group">
               <label for="prenom">Prénom</label>
-              <input type="text" name="prenom" id="prenom" class="form-control" required pattern="[A-Za-z]{1}[A-Za-z-']{1,28}[A-Za-z]{1}"
-                data-pattern-error="Uniquement des caractères alphabétiques et éventuellement - ou '" placeholder="Votre prénom"
-              />
-              <div class="help-block with-errors"></div>
+              <input type="text" name="first_name" id="prenom" class="form-control"  placeholder="Votre prénom" value="{{ $user['first_name']}}"/>
             </div>
+
+
+              <div class="help-block with-errors"></div>
+
             <br />
             <div class="form-group">
               <label for="dateNaissance">date de Naissance</label>
-              <input type="date" name="dateNaissance" id="dateNaissance" class="form-control" required data-naissance="" placeholder="Votre prénom"
-              />
-              <div class="help-block with-errors"></div>
+              <input type="date" name="birthday" id="dateNaissance" class="form-control" placeholder="Votre prénom" value="{{ $user['birthday']}}"  />
             </div>
+
+              <div class="help-block with-errors"></div>
+
             <br />
             <div class="form-group">
               <label for="utilisateur">Nom d'utilisateur</label>
-              <input type="text" name="utilisateur" id="utilisateur" class="form-control" required placeholder="nom d'utilisateur" />
+              <input type="text" name="user_name" id="utilisateur" class="form-control" value="{{ $user['user_name']}}" />
               <div class="help-block with-errors"></div>
             </div>
             <br />
             <div class="form-group">
               <label for="mail">E-mail</label>
-              <input type="email" name="mail" id="mail" class="form-control" required placeholder="votre email" />
+              <input type="email" name="email" id="mail" class="form-control" placeholder="votre email" value="{{ $user['email']}}" />
               <div class="help-block with-errors"></div>
             </div>
             <br />
             <div class="form-group">
               <label for="description">Description</label>
-              <textarea name="description" id="description" class="form-control" placeholder="Votre description"></textarea>
+              <textarea name="description" id="description" class="form-control"  placeholder="Votre description">{{ $user['description']}}</textarea>
               <div class="help-block with-errors"></div>
             </div>
             <br />
@@ -84,15 +86,14 @@
             <br />
             <div class="form-group">
               <label for="new-pass-1">Nouveau mot de passe</label>
-              <input type="password" name="new-pass-1" id="new-pass-1" class="form-control" data-minlength="6" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
-                data-error-minlength="au moins 6 caractères dont 1 numérique et 1 alphabétique" data-error-pattern="au moins 6 caractères dont 1 numérique et 1 alphabétique"
-                data-error-passe="La confirmation doit être égale au mot de passe" data-passe="#new-pass-2" />
+              <input type="password" name="password" id="new-pass-1" class="form-control" />
+
               <div class="help-block with-errors"></div>
             </div>
             <br />
             <div class="form-group">
               <label for="new-pass-2"> Confirmation du nouveau mot de passe</label>
-              <input type="password" name="new-pass-2" id="new-pass-2" class="form-control" data-passe="#new-pass-1" />
+              <input type="password" name="password_confirmation" id="new-pass-2" class="form-control"  />
               <div class="help-block with-errors"></div>
             </div>
             <br />
@@ -112,6 +113,7 @@
           </fieldset>
         </form>
       </div>
+  </div>
     </div>
     <footer>
 
