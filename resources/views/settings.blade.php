@@ -77,8 +77,8 @@
             <legend>Mot de passe</legend>
             <br/>
             <div class="form-group">
-              <label for="old-pass">Ancien mot de passe</label>
-              <input type="password" name="old-pass" id="old-pass" class="form-control" />
+              <label for="old_pass">Ancien mot de passe</label>
+              <input type="password" name="old_pass" id="old-pass" class="form-control" />
               <div class="help-block with-errors"></div>
             </div>
             <br />
@@ -91,8 +91,8 @@
             </div>
             <br />
             <div class="form-group">
-              <label for="new-pass-2"> Confirmation du nouveau mot de passe</label>
-              <input type="password" name="new-pass-2" id="new-pass-2" class="form-control" data-passe="#new-pass-1" />
+              <label for="password_confirmation"> Confirmation du nouveau mot de passe</label>
+              <input type="password" name="password_confirmation" id="new-pass-2" class="form-control" data-passe="#new-pass-1" />
               <div class="help-block with-errors"></div>
             </div>
             <br />
