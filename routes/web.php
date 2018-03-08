@@ -10,17 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/login', 'LoginController@create')->name('login');
-Route::post('/login', 'LoginController@store')->name('postLogin');
-
-Route::get('/signup', 'SignUpController@create')->name('signup');
-Route::post('/signup', 'SignUpController@store')->name('postSignup');
+Route::middleware([
+    'App\Http\Middleware\Signup'
+])->group(function() {
 
 
-Route::group([
-        'middleware' => 'App\Http\Middleware\Auth',
-], function() {
+    Route::get('/login', 'LoginController@create')->name('login');
+    Route::post('/login', 'LoginController@store')->name('postLogin');
+
+    Route::get('/signup', 'SignUpController@create')->name('signup');
+    Route::post('/signup', 'SignUpController@store')->name('postSignup');
+});
+
+Route::middleware([
+     'App\Http\Middleware\Auth'
+])->group(function() {
 
     Route::get('/settings', 'SettingsController@create')->name('settings');
     Route::post('/settings', 'SettingsController@update')->name('postSettings');

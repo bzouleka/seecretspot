@@ -4,8 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-
-class Auth
+class Signup
 {
     /**
      * Handle an incoming request.
@@ -16,17 +15,12 @@ class Auth
      */
     public function handle($request, Closure $next)
     {
+        if (auth()->check()) {
 
-        if (auth()->guest()) {
-
-            return redirect('/login')->withErrors([
-                'user_name' => 'Vous devez être connecté pour accéder à cette page.',
-            /*$errors = $validator->errors('Vous devez être connecté pour accéder à cette page.');
-            echo $errors->first('user_name');*/
-
+            return redirect()->route('homePage')->withErrors([
+                'barre-de-recherche' => 'Vous êtes déjà inscrit sur notre site.'
             ]);
         }
-
         return $next($request);
     }
 }
