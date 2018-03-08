@@ -50,7 +50,7 @@
                  </li>
 
                  <li>
-                   <a class="btn btn-default" href="inscription.html" id="bouton-mail">
+                   <a class="btn btn-default" href="{{route('signup')}}" id="bouton-mail">
                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
                    Email </a>
                 </li>
