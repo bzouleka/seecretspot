@@ -84,6 +84,7 @@
               </div>
             </div>
 -->
+              @isset($spots)
             @foreach ($spots as $spot)
             <div class="col-xs-12">
               <img src="{{ asset($spot->picture_name) }}" alt="{{ asset($spot->title) }}" style="width: 100%" class="photo-spot">
@@ -102,6 +103,7 @@
             </div>
             
             @endforeach
+              @endisset
 <!--
             <div class="col-xs-12">
               <img src="images/velo-montagne.jpg" alt="photo-velo-en-croatie" style="width: 100%" class="photo-spot">
