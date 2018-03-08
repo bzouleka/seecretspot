@@ -10,34 +10,48 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::middleware([
+    'App\Http\Middleware\Signup'
+])->group(function() {
 
-Route::get('/login', 'LoginController@create')->name('login');
-Route::post('/login', 'LoginController@store')->name('postLogin');
 
-Route::get('/signup', 'SignUpController@create')->name('signup');
-Route::post('/signup', 'SignUpController@store')->name('postSignup');
+    Route::get('/login', 'LoginController@create')->name('login');
+    Route::post('/login', 'LoginController@store')->name('postLogin');
 
-Route::get('/settings', 'SettingsController@create')->name('settings');
-Route::post('/settings', 'SettingsController@update')->name('postSettings');
 
-Route::get('/myProfile', 'MyProfileController@create')->name('myProfile');
-Route::post('/myProfile', 'MyProfileController@post')->name('postMyProfile');
+    Route::get('/signup', 'SignUpController@create')->name('signup');
+    Route::post('/signup', 'SignUpController@store')->name('postSignup');
 
-Route::get('/userProfile', 'UserProfileController@create')->name('userProfile');
-Route::post('/userProfile', 'UserProfileController@post')->name('postUserProfile');
+});
+Route::group([
+        'middleware' => 'App\Http\Middleware\Auth',
+], function() {
 
-Route::get('/',['uses' => 'HomePageController@create', 'as' => 'homePage']);
+    Route::get('/settings', 'SettingsController@create')->name('settings');
+    Route::post('/settings', 'SettingsController@update')->name('postSettings');
 
-Route::get('/newSpot', ['uses' => 'NewSpotController@create', 'as' => 'newSpot']);
-Route::post('/newSpot',['uses' => 'NewSpotController@store', 'as' => 'postNewSpot']);
+    Route::get('/myProfile', 'MyProfileController@create')->name('myProfile');
+    Route::post('/myProfile', 'MyProfileController@post')->name('postMyProfile');
 
-Route::get('/spot', ['uses' => 'SpotController@create', 'as' => 'spot']);
-Route::post('/spot',['uses' => 'SpotController@store', 'as' => 'postSpot']);
+    Route::get('/userProfile', 'UserProfileController@create')->name('userProfile');
+    Route::post('/userProfile', 'UserProfileController@post')->name('postUserProfile');
 
-Route::get('/results', ['uses' => 'ResultsController@create', 'as' => 'results']);
+    Route::get('/', ['uses' => 'HomePageController@create', 'as' => 'homePage']);
+
+    Route::get('/newSpot', ['uses' => 'NewSpotController@create', 'as' => 'newSpot']);
+    Route::post('/newSpot', ['uses' => 'NewSpotController@store', 'as' => 'postNewSpot']);
+
+    Route::get('/spot', ['uses' => 'SpotController@create', 'as' => 'spot']);
+    Route::post('/spot', ['uses' => 'SpotController@store', 'as' => 'postSpot']);
+
+    Route::get('/results', ['uses' => 'ResultsController@create', 'as' => 'results']);
+
+    Route::get('/logout', 'LoginController@logout')->name('logout');
 
 // à Voir plus tard
-Route::get('/message', 'MessageController@create')->name('message');
+    Route::get('/message', 'MessageController@create')->name('message');
 
-Route::get('/hobbies', 'SettingsController@create')->name('hobbies');
-Route::post('/hobbies', 'SettingsController@store')->name('postHobbies');
+    Route::get('/hobbies', 'SettingsController@create')->name('hobbies');
+    Route::post('/hobbies', 'SettingsController@store')->name('postHobbies');
+
+});

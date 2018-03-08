@@ -28,7 +28,7 @@ class SignUpController extends Controller
         $user->last_name = $request['last_name'];
         $user->user_name = $request['user_name'];
         $user->country = $request['country'];
-        $user->password = $request['password'];
+        $user->password = bcrypt($request['password']);
 
 
         $user->save();
