@@ -53,7 +53,7 @@ class MyProfileController extends Controller
             $spot->setAttribute('user_id',1);
             $spot->save();
             // echo '$spot->id' . $spot->id;
-            //.
+
 
             $photos = new Photo();
             $photos->setAttribute('spot_id', $spot->id);
