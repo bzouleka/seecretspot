@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\SettingsRequest;
 
 
 class SettingsController extends Controller
@@ -18,11 +19,14 @@ class SettingsController extends Controller
     }
 
 
-    public function update(Request $request)
+    public function update(SettingsRequest $request)
     {
         $user = Auth::user();
         if(isset($request['last_name']) && !empty($request['last_name'])) {
+            //$request['email']=> 'max: 100|required|email|unique:users';
             $user->last_name = $request['last_name'];
+
+
         }
         if(isset($request['first_name']) && !empty($request['first_name'])) {
             $user->first_name = $request['first_name'];
