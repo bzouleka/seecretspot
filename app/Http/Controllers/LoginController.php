@@ -21,11 +21,17 @@ class LoginController extends Controller
         ]);
 
         if($Result) {
-            return redirect()->route( 'homePage');
+            return view('homePage');
         }
         return back()->withErrors([
             'user_name' => "Vos identifiants sont incorrects."
         ]);
     }
 
-}
+        public function logout()
+        {
+            auth()->logout();
+            return redirect()->route('login');
+        }
+
+    }
