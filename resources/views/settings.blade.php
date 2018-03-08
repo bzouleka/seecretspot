@@ -27,41 +27,42 @@
   <div class="container">
     <div id="formparametrediv" class="col-lg-offset-4 col-lg-6 col-lg-offset-4">
       <div class="row">
-        <form id="formparametre" class="well" role="form" method="post" action="{{ Route('hobbies') }}">
+        <form id="formparametre" class="well" role="form" method="post" action="{{ Route('postSettings') }}">
+          @csrf
           <fieldset>
             <legend>
               <span class="hidden-xs">Parametre de votre </span>Compte</legend>
 
             <div class="form-group">
-              <label for="nom">Nom</label>
-              <input type="text" name="nom" id="nom" class="form-control"
+              <label for="last_name">Nom</label>
+              <input type="text" name="last_name" id="nom" class="form-control"
                 placeholder="Votre nom" />
               <div class="help-block with-errors"></div>
             </div>
             <br />
             <div class="form-group">
-              <label for="prenom">Prénom</label>
-              <input type="text" name="prenom" id="prenom" class="form-control" placeholder="Votre prénom"
+              <label for="first_name">Prénom</label>
+              <input type="text" name="first_name" id="prenom" class="form-control" placeholder="Votre prénom"
               />
               <div class="help-block with-errors"></div>
             </div>
             <br />
             <div class="form-group">
-              <label for="dateNaissance">date de Naissance</label>
-              <input type="date" name="dateNaissance" id="dateNaissance" class="form-control" placeholder="Votre prénom"
+              <label for="birthday">date de Naissance</label>
+              <input type="date" name="birthday" id="dateNaissance" class="form-control" placeholder="Votre prénom"
               />
               <div class="help-block with-errors"></div>
             </div>
             <br />
             <div class="form-group">
-              <label for="utilisateur">Nom d'utilisateur</label>
-              <input type="text" name="utilisateur" id="utilisateur" class="form-control" placeholder="nom d'utilisateur" />
+              <label for="user_name">Nom d'utilisateur</label>
+              <input type="text" name="user_name" id="utilisateur" class="form-control" placeholder="nom d'utilisateur" />
               <div class="help-block with-errors"></div>
             </div>
             <br />
             <div class="form-group">
-              <label for="mail">E-mail</label>
-              <input type="email" name="mail" id="mail" class="form-control" placeholder="votre email" />
+              <label for="email">E-mail</label>
+              <input type="email" name="email" id="mail" class="form-control" placeholder="votre email" />
               <div class="help-block with-errors"></div>
             </div>
             <br />
@@ -82,8 +83,8 @@
             </div>
             <br />
             <div class="form-group">
-              <label for="new-pass-1">Nouveau mot de passe</label>
-              <input type="password" name="new-pass-1" id="new-pass-1" class="form-control" data-minlength="6" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
+              <label for="password">Nouveau mot de passe</label>
+              <input type="password" name="password" id="new-pass-1" class="form-control" data-minlength="6" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
                 data-error-minlength="au moins 6 caractères dont 1 numérique et 1 alphabétique" data-error-pattern="au moins 6 caractères dont 1 numérique et 1 alphabétique"
                 data-error-passe="La confirmation doit être égale au mot de passe" data-passe="#new-pass-2" />
               <div class="help-block with-errors"></div>
