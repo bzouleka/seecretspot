@@ -6,23 +6,24 @@
             <div class="col-md-4" id="test">
               <div class="row">
                 <div class="col-md-6">
-                    <img src="{{ asset('images/photo-profil-visiteur.jpg') }} " alt="Phot de profil" width="100%" class="hidden-sm hidden-xs" />
+                    <img src="{{ asset($user['picture_name']) }} " alt="Phot de profil" width="100%" class="hidden-sm hidden-xs" />
                 </div>
                 <div class="col-md-6">
                     <form method="post" action="{{ route('postMyProfile') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
+                        <div>Choisissez votre photo</div>
                         <input type="file" name="myFile" />
-                        <textarea name="commentaire" id="ameliorer" rows="3">Description...</textarea><br>
+                        <textarea name="commentaire" id="ameliorer" rows="2" cols="33" placeholder = "Description..."></textarea><br>
                         <input type="submit" value="Envoyer" />
                     </form>
                 </div>           
               </div> 
-                <h3>John Doe <a href="{{ asset('parametres.html')}}"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></h3>
-                <div>Je suis passionné de sports de glisse toujours à la recherche des meilleurs spots!<br/>Contactez moi pour partager<br/>#surf #glisse #montagne</div>
+                <h3>{{ $user['user_name'] }} <a href="{{ asset('parametres.html')}}"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></h3>
+                <div>{{ $user['description'] }}<br/>Contactez moi pour partager<br/>#surf #glisse #montagne</div>
             </div>
             <div class="col-md-8">
 
-                <?php foreach ($spots as $spot) { ?>
+                @foreach ($spots as $spot)
                 <img src="{{ asset($spot->picture_name) }}" 
                      alt="Phot de profil" width="100%" />
                 <div class="row">
@@ -40,8 +41,7 @@
                         <p>{{ $spot->description_post }}</p>
                     </div>
                 </div>
-                <?php } ?>
-
+                @endforeach
             </div>
         </section>
     </div>
