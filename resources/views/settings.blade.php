@@ -39,6 +39,7 @@
                 placeholder="Votre nom" />
               <div class="help-block with-errors"></div>
             </div>
+              <div class="help-block with-errors"></div>
             <br />
             <div class="form-group">
               <label for="first_name">Prénom</label>
@@ -46,6 +47,10 @@
               />
               <div class="help-block with-errors"></div>
             </div>
+
+
+              <div class="help-block with-errors"></div>
+
             <br />
             <div class="form-group">
               <label for="birthday">date de Naissance</label>
@@ -53,6 +58,9 @@
               />
               <div class="help-block with-errors"></div>
             </div>
+
+              <div class="help-block with-errors"></div>
+
             <br />
             <div class="form-group">
               <label for="user_name">Nom d'utilisateur</label>
@@ -68,7 +76,7 @@
             <br />
             <div class="form-group">
               <label for="description">Description</label>
-              <textarea name="description" id="description" class="form-control" placeholder="Votre description"></textarea>
+              <textarea name="description" id="description" class="form-control"  placeholder="Votre description">{{ $user['description']}}</textarea>
               <div class="help-block with-errors"></div>
             </div>
             <br />
@@ -84,15 +92,14 @@
             <br />
             <div class="form-group">
               <label for="password">Nouveau mot de passe</label>
-              <input type="password" name="password" id="new-pass-1" class="form-control" data-minlength="6" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
-                data-error-minlength="au moins 6 caractères dont 1 numérique et 1 alphabétique" data-error-pattern="au moins 6 caractères dont 1 numérique et 1 alphabétique"
-                data-error-passe="La confirmation doit être égale au mot de passe" data-passe="#new-pass-2" />
+              <input type="password" name="password" id="new-pass-1" class="form-control" />
+
               <div class="help-block with-errors"></div>
             </div>
             <br />
             <div class="form-group">
               <label for="password_confirmation"> Confirmation du nouveau mot de passe</label>
-              <input type="password" name="password_confirmation" id="new-pass-2" class="form-control" data-passe="#new-pass-1" />
+              <input type="password" name="password_confirmation" id="new-pass-2" class="form-control"  />
               <div class="help-block with-errors"></div>
             </div>
             <br />
@@ -112,6 +119,7 @@
           </fieldset>
         </form>
       </div>
+  </div>
     </div>
     <footer>
 
