@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Middleware\Auth;
 use App\Http\Requests\NewSpotValidation;
 use App\Photo;
 use App\Spot;
 use Illuminate\Support\Facades\File;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\CssSelector\Exception\InternalErrorException;
 
@@ -23,7 +21,7 @@ class NewSpotController extends Controller
 
     /**
      * @param NewSpotValidation $request
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Http\RedirectResponse
      * @throws InternalErrorException
      */
     public function store(NewSpotValidation $request)

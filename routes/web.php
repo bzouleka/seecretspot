@@ -33,7 +33,7 @@ Route::group([
     Route::get('/myProfile', 'MyProfileController@create')->name('myProfile');
     Route::post('/myProfile', 'MyProfileController@post')->name('postMyProfile');
 
-    Route::get('/userProfile', 'UserProfileController@create')->name('userProfile');
+    Route::get('/userProfile/{user_id}', 'UserProfileController@create')->name('userProfile');
     Route::post('/userProfile', 'UserProfileController@post')->name('postUserProfile');
 
     Route::get('/', ['uses' => 'HomePageController@create', 'as' => 'homePage']);
@@ -47,6 +47,8 @@ Route::group([
     Route::get('/results', ['uses' => 'ResultsController@create', 'as' => 'results']);
 
     Route::get('/logout', 'LoginController@logout')->name('logout');
+
+    Route::post('/comments', 'CommentsController@store')->name('postComments');
 
 // à Voir plus tard
     Route::get('/message', 'MessageController@create')->name('message');

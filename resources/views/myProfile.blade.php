@@ -10,7 +10,7 @@
                     <img src="{{ asset($user['picture_name']) }} " alt="Phot de profil" width="100%" />
                 </div>
                 <div class="col-md-6">
-                    <h4>{{ $user['user_name'] }} <a href="{{ route('settings') }}"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></h3>
+                    <h4>{{ $user['user_name'] }} <a href="{{ route('settings') }}"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></h4>
                     <form method="post" action="{{ route('postMyProfile') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <input type="file" name="myFile" placeholder="Choisissez votre photo"/>
