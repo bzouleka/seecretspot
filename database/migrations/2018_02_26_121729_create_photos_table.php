@@ -19,7 +19,7 @@ class CreatePhotosTable extends Migration
             $table->date('picture_date')->nullable();
             $table->tinyInteger('priority')->nullable();
             $table->integer('spot_id')->unsigned();
-            //$table->foreign('spot_id')->references('id')->on('spots');
+            $table->foreign('spot_id')->references('id')->on('spots');
             $table->timestamps();
         });
     }

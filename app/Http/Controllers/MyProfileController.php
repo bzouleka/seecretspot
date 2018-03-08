@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Spot;
 use App\Photo;
 use App\User;
@@ -18,19 +19,17 @@ class MyProfileController extends Controller
     public function create()
 //    public function create(App\User $user)
 {
-        $user_id = 1;
-        $user = User::find($user_id);
-        //dd ($user);
-
-        
+        $user = Auth::user();
+        //dd($user);
+                
 //      look for users's spots
         $spots = DB::table('spots')
-            ->select(db::raw('spots.id,picture_name,description_post,count(likes.id_user) as likes_count'))
+            ->select(db::raw('spots.id,spots.title,picture_name,description_post,count(likes.id_user) as likes_count'))
             ->join('photos','spots.id','=','photos.spot_id')
             ->leftjoin('likes','spots.id','=','likes.id_spot')
-            ->where('user_id','=',$user_id)
+            ->where('user_id','=',$user->id)
             ->whereNotNull ('priority')
-            ->groupBy('spots.id','picture_name','description_post')
+            ->groupBy('spots.id','spots.title','picture_name','description_post')
             ->orderBy('spots.id','desc')
             ->get();
 
@@ -46,18 +45,17 @@ class MyProfileController extends Controller
 
 
     public function post(Request $request) {
-        $user_id=1;
-        $user = User::find($user_id);
+        $user = Auth::user();
 
+        $userBDD = User::find($user->id);
         if ($request->hasFile('myFile') && $request->file('myFile')->isValid()) {
             $fileName = $request->myFile->store('public/users');
             $fullName = 'storage/users/' . class_basename($fileName);
-            $user->setAttribute('picture_name',$fullName);
-//          update in mysql : user
-            $user->save();
+            $userBDD->setAttribute('picture_name',$fullName);
         }
 
-
+        $userBDD->setAttribute('description',$request->input('description'));
+        $userBDD->save();
 
 /*  code pour créer un nouveau spot avec photo
 //          store file in storage/public/spots with a name generate by laravel
@@ -79,8 +77,6 @@ class MyProfileController extends Controller
             $photos->save();
         }
 */
-
-
 //      re-chargement de la page
         return redirect()->route('myProfile');
 
