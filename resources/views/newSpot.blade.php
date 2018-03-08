@@ -32,6 +32,7 @@
           @csrf
           <div class="col-xs-12">
 
+            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}" style="border-radius: 3px;">
             <input type="text" name="title" id="contact" placeholder=" Nom du Spot" style="border-radius: 3px;">
           </div>
           <div class="col-xs-12">

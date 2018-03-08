@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\Auth;
 use App\Http\Requests\NewSpotValidation;
 use App\Photo;
 use App\Spot;
@@ -32,11 +33,10 @@ class NewSpotController extends Controller
         if ($file) {
             Storage::disk('local')->put('public/spots/' .$filename, File::get($file));
         }
-
         $spot = new Spot();
         $spot->setAttribute('description_post', $request->input('description'));
         $spot->setAttribute('title', $request->input('title'));
-        $spot->setAttribute('user_id', 1);
+        $spot->setAttribute('user_id', $request->input('user_id'));
 
         if ($spot->save()) {
             $picture = new Photo();
