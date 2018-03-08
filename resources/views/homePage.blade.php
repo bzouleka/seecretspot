@@ -36,6 +36,8 @@
         <section class="col-md-8 col-xs-12">
 
           <div class="row">
+
+<!--  1èere photo avec carrousel          
             <div class="col-xs-12 photo-spot">
               <div class="row" id="choupi">
                 <div class="col-sm-1 hidden-xs" id="gauche">
@@ -81,20 +83,26 @@
                 </div>
               </div>
             </div>
-
+-->
+            @foreach ($spots as $spot)
             <div class="col-xs-12">
-              <img src="images/riviere-fier.jpg" alt="photo-du-fier" style="width: 100%" class="photo-spot">
+              <img src="{{ asset($spot->picture_name) }}" alt="{{ asset($spot->title) }}" style="width: 100%" class="photo-spot">
             </div>
-            <div class="col-xs-9">
-              <div class="hashtag"> #Haute-Savoie #Baignade</div>
+            <div class="col-xs-3">
+              <div class="hashtag">{{ $spot->user_name }}</div>
+            </div>
+            <div class="col-xs-6">
+              <div class="hashtag">{{ $spot->title }}</div>
             </div>
             <div class="col-xs-3">
               <div class="icon-image">
-              <i class="fa fa-diamond" aria-hidden="true"></i>
+              <i class="fa fa-diamond" aria-hidden="true">{{ $spot->likes_count }}</i>
               <a href="message.html" class="a-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
               </div>
             </div>
-
+            
+            @endforeach
+<!--
             <div class="col-xs-12">
               <img src="images/velo-montagne.jpg" alt="photo-velo-en-croatie" style="width: 100%" class="photo-spot">
             </div>
@@ -153,7 +161,7 @@
               </div>
             </div>
           </div>
-
+-->
         </section>
 
         <aside class="col-xs-4 hidden-sm hidden-xs">

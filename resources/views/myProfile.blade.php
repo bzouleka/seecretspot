@@ -46,10 +46,10 @@
 
                 @foreach ($spots as $spot)
                 <img src="{{ asset($spot->picture_name) }}" 
-                     alt="Phot de profil" width="100%" />
+                     alt="{{ asset($spot->title) }}" width="100%" />
                 <div class="row">
                     <div class="col-xs-6">
-                        <p>#sport #spotdeskate #paysbasque</p>
+                        <p>{{ $spot->title }}</p>
                     </div>
                     <div class="col-xs-6">
                         <i class="fa fa-envelope-o" aria-hidden="true"></i>
