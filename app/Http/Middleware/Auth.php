@@ -4,14 +4,13 @@ namespace App\Http\Middleware;
 
 use Closure;
 
+
 class Auth
 {
     /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
+     * @param $request
+     * @param Closure $next
+     * @return $this|mixed
      */
     public function handle($request, Closure $next)
     {
@@ -19,7 +18,9 @@ class Auth
         if (auth()->guest()) {
 
             return redirect('/login')->withErrors([
-                'user_name' => 'Vous devez être connecté pour accéder à cette page.'
+                'user_name' => 'Vous devez être connecté pour accéder à cette page.',
+
+
             ]);
         }
 

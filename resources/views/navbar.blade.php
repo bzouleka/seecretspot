@@ -13,12 +13,14 @@
     </div>
 </nav>
 @if ($errors->any())
-    <div class="alert alert-danger">
+    <div class="container">
+    <div class="col-xs-offset-3 col-xs-6 alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
             @endforeach
         </ul>
+    </div>
     </div>
 @endif
 
