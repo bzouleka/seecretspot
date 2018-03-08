@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\NewSpotValidation;
 use App\Photo;
 use App\Spot;
@@ -17,7 +19,11 @@ class SpotController extends Controller
      */
     public function create()
     {
-        return view('spot');
+        $spot = DB::table('spots')->where('id', 3)->first();
+        $spotPic = DB::table('photos')->where('spot_id', $spot->id)->first();
+        $comments = DB::table('comments')->where('id_spot', $spot->id)->get();
+        //dd($comments);
+        return view('spot', ['spot' => $spot, 'spotPic' => $spotPic,'comments' => $comments]);
     }
 
     /**

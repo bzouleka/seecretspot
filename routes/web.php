@@ -48,10 +48,12 @@ Route::group([
 
     Route::get('/logout', 'LoginController@logout')->name('logout');
 
+    Route::post('/comments', 'CommentsController@store')->name('postComments');
+
 // à Voir plus tard
     Route::get('/message', 'MessageController@create')->name('message');
 
-    Route::get('/hobbies', 'SettingsController@create')->name('hobbies');
-    Route::post('/hobbies', 'SettingsController@store')->name('postHobbies');
+    Route::get('/hobbies', 'HobbiesController@create')->name('hobbies');
+    Route::post('/hobbies', 'HobbiesController@store')->name('postHobbies');
 
 });
