@@ -7,7 +7,8 @@
             <li class="menu_icon"><a href="{{route('myProfile')}}" class="menu_lien"><i class="fa fa-user" aria-hidden="true"></i></a></li>
             <li class="menu_icon"><a href="{{route('message')}}" class="menu_lien"><i class="fa fa-comments-o" aria-hidden="true"></i></a></li>
             <li class="menu_icon"><a href="{{route('results')}}" class="menu_lien"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-            <li class="menu_icon"><a href="{{route('settings')}}" class="menu_lien"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
+            <li class="menu_icon"><a href="{{route('settings')}}" class="menu_lien" ><i class="fa fa-cog" aria-hidden="true"></i></a></li>
+            <li class="menu_icon"><a href="{{route('logout')}}" class="menu_lien" style="color: red;"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
         </ul>
     </div>
 </nav>
