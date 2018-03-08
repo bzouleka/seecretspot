@@ -9,13 +9,16 @@ use Illuminate\Support\Facades\Auth;
 
 class SettingsController extends Controller
 {
-    public function create()
+    public function create(request $request)
     {
-        return view('settings');
+
+        $user = Auth::user();
+
+        return view('settings',["user"=>$user]);
     }
 
 
-    public function update(SettingsRequest $request)
+    public function update(Request $request)
     {
         $user = Auth::user();
         if(isset($request['last_name']) && !empty($request['last_name'])) {

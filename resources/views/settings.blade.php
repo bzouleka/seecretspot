@@ -35,13 +35,13 @@
 
             <div class="form-group">
               <label for="nom">Nom</label>
-              <input type="text" name="last_name" id="nom" class="form-control"  placeholder="Votre nom" />
+              <input type="text" name="last_name" id="nom" class="form-control"  placeholder="Votre nom" value="{{ $user['last_name']}}"/>
             </div>
               <div class="help-block with-errors"></div>
             <br />
             <div class="form-group">
               <label for="prenom">Prénom</label>
-              <input type="text" name="first_name" id="prenom" class="form-control"  placeholder="Votre prénom"/>
+              <input type="text" name="first_name" id="prenom" class="form-control"  placeholder="Votre prénom" value="{{ $user['first_name']}}"/>
             </div>
 
 
@@ -50,7 +50,7 @@
             <br />
             <div class="form-group">
               <label for="dateNaissance">date de Naissance</label>
-              <input type="date" name="birthday" id="dateNaissance" class="form-control" placeholder="Votre prénom"  />
+              <input type="date" name="birthday" id="dateNaissance" class="form-control" placeholder="Votre prénom" value="{{ $user['birthday']}}"  />
             </div>
 
               <div class="help-block with-errors"></div>
@@ -58,19 +58,19 @@
             <br />
             <div class="form-group">
               <label for="utilisateur">Nom d'utilisateur</label>
-              <input type="text" name="user_name" id="utilisateur" class="form-control" />
+              <input type="text" name="user_name" id="utilisateur" class="form-control" value="{{ $user['user_name']}}" />
               <div class="help-block with-errors"></div>
             </div>
             <br />
             <div class="form-group">
               <label for="mail">E-mail</label>
-              <input type="email" name="email" id="mail" class="form-control" placeholder="votre email" />
+              <input type="email" name="email" id="mail" class="form-control" placeholder="votre email" value="{{ $user['email']}}" />
               <div class="help-block with-errors"></div>
             </div>
             <br />
             <div class="form-group">
               <label for="description">Description</label>
-              <textarea name="description" id="description" class="form-control" placeholder="Votre description"></textarea>
+              <textarea name="description" id="description" class="form-control"  placeholder="Votre description">{{ $user['description']}}</textarea>
               <div class="help-block with-errors"></div>
             </div>
             <br />
