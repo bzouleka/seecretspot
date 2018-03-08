@@ -48,6 +48,8 @@ Route::group([
 
     Route::get('/logout', 'LoginController@logout')->name('logout');
 
+    Route::post('/comments', 'CommentsController@store')->name('postComments');
+
 // à Voir plus tard
     Route::get('/message', 'MessageController@create')->name('message');
 
