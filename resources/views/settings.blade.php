@@ -34,35 +34,34 @@
 
             <div class="form-group">
               <label for="nom">Nom</label>
-              <input type="text" name="nom" id="nom" class="form-control" required pattern="[A-Za-z]{1}[A-Za-z-']{1,28}[A-Za-z]{1}" data-pattern-error="Uniquement des caractères alphabétiques et éventuellement - ou '"
+              <input type="text" name="nom" id="nom" class="form-control"
                 placeholder="Votre nom" />
               <div class="help-block with-errors"></div>
             </div>
             <br />
             <div class="form-group">
               <label for="prenom">Prénom</label>
-              <input type="text" name="prenom" id="prenom" class="form-control" required pattern="[A-Za-z]{1}[A-Za-z-']{1,28}[A-Za-z]{1}"
-                data-pattern-error="Uniquement des caractères alphabétiques et éventuellement - ou '" placeholder="Votre prénom"
+              <input type="text" name="prenom" id="prenom" class="form-control" placeholder="Votre prénom"
               />
               <div class="help-block with-errors"></div>
             </div>
             <br />
             <div class="form-group">
               <label for="dateNaissance">date de Naissance</label>
-              <input type="date" name="dateNaissance" id="dateNaissance" class="form-control" required data-naissance="" placeholder="Votre prénom"
+              <input type="date" name="dateNaissance" id="dateNaissance" class="form-control" placeholder="Votre prénom"
               />
               <div class="help-block with-errors"></div>
             </div>
             <br />
             <div class="form-group">
               <label for="utilisateur">Nom d'utilisateur</label>
-              <input type="text" name="utilisateur" id="utilisateur" class="form-control" required placeholder="nom d'utilisateur" />
+              <input type="text" name="utilisateur" id="utilisateur" class="form-control" placeholder="nom d'utilisateur" />
               <div class="help-block with-errors"></div>
             </div>
             <br />
             <div class="form-group">
               <label for="mail">E-mail</label>
-              <input type="email" name="mail" id="mail" class="form-control" required placeholder="votre email" />
+              <input type="email" name="mail" id="mail" class="form-control" placeholder="votre email" />
               <div class="help-block with-errors"></div>
             </div>
             <br />
