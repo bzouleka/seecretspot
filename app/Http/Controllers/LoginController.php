@@ -21,7 +21,7 @@ class LoginController extends Controller
         ]);
 
         if($Result) {
-            return view('homePage');
+            return redirect()->route( 'homePage');
         }
         return back()->withErrors([
             'user_name' => "Vos identifiants sont incorrects."
