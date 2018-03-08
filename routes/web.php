@@ -19,29 +19,36 @@ Route::get('/logout', 'LoginController@logout')->name('logout');
 Route::get('/signup', 'SignUpController@create')->name('signup');
 Route::post('/signup', 'SignUpController@store')->name('postSignup');
 
-Route::get('/settings', 'SettingsController@create')->name('settings');
-Route::post('/settings', 'SettingsController@update')->name('postSettings');
 
-Route::get('/myProfile', 'MyProfileController@create')->name('myProfile');
-Route::post('/myProfile', 'MyProfileController@post')->name('postMyProfile');
+Route::group([
+        'middleware' => 'App\Http\Middleware\Auth',
+], function() {
 
-Route::get('/userProfile', 'UserProfileController@create')->name('userProfile');
-Route::post('/userProfile', 'UserProfileController@post')->name('postUserProfile');
+    Route::get('/settings', 'SettingsController@create')->name('settings');
+    Route::post('/settings', 'SettingsController@update')->name('postSettings');
 
-Route::get('/',['uses' => 'HomePageController@create', 'as' => 'homePage']);
+    Route::get('/myProfile', 'MyProfileController@create')->name('myProfile');
+    Route::post('/myProfile', 'MyProfileController@post')->name('postMyProfile');
 
-Route::get('/newSpot', ['uses' => 'NewSpotController@create', 'as' => 'newSpot']);
-Route::post('/newSpot',['uses' => 'NewSpotController@store', 'as' => 'postNewSpot']);
+    Route::get('/userProfile', 'UserProfileController@create')->name('userProfile');
+    Route::post('/userProfile', 'UserProfileController@post')->name('postUserProfile');
 
-Route::get('/spot', ['uses' => 'SpotController@create', 'as' => 'spot']);
-Route::post('/spot',['uses' => 'SpotController@store', 'as' => 'postSpot']);
+    Route::get('/', ['uses' => 'HomePageController@create', 'as' => 'homePage']);
 
-Route::get('/results', ['uses' => 'ResultsController@create', 'as' => 'results']);
+    Route::get('/newSpot', ['uses' => 'NewSpotController@create', 'as' => 'newSpot']);
+    Route::post('/newSpot', ['uses' => 'NewSpotController@store', 'as' => 'postNewSpot']);
+
+    Route::get('/spot', ['uses' => 'SpotController@create', 'as' => 'spot']);
+    Route::post('/spot', ['uses' => 'SpotController@store', 'as' => 'postSpot']);
+
+    Route::get('/results', ['uses' => 'ResultsController@create', 'as' => 'results']);
 
 
 
 // à Voir plus tard
-Route::get('/message', 'MessageController@create')->name('message');
+    Route::get('/message', 'MessageController@create')->name('message');
 
-Route::get('/hobbies', 'SettingsController@create')->name('hobbies');
-Route::post('/hobbies', 'SettingsController@store')->name('postHobbies');
+    Route::get('/hobbies', 'SettingsController@create')->name('hobbies');
+    Route::post('/hobbies', 'SettingsController@store')->name('postHobbies');
+
+});
