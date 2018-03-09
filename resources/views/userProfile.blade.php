@@ -20,7 +20,7 @@
 
                         <h4>{{ $user['user_name'] }}
 
-                            <a href=""><i class="fa fa-user-plus" aria-hidden="true"></i></a>
+                            <a href="{{route('friends')}}"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
 
                         </h4>
 
@@ -39,8 +39,7 @@
                                     <p>{{ $spot->title }}</p>
                                 </div>
                                 <div class="col-xs-6">
-                                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                    <i class="fa fa-search-plus" aria-hidden="true"></i>
+                                    <a href="{{route('message')}}"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
                                     <i class="fa fa-diamond" aria-hidden="true">{{ $spot->likes_count }}</i>
                                 </div>
                             </div>
@@ -52,10 +51,12 @@
                         @endforeach
 
                     </div>
-                </div>
+
+
         </section>
     </div>
-    </div>
+
+
 @endsection
 
 @section('js')

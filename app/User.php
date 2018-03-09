@@ -23,5 +23,15 @@ class User extends Model implements Authenticatable
         return $this->hasMany('App\Comments');
     }
 
+    /*public function friends() {
+        return $this->hasMany(friends)->orWhere('id_user2', $this->id);
+    }*/
+
+    public function friends()
+    {
+        return $this->belongsToMany('User', 'friends', 'id_user1', 'id_user2')->withTimestamps();
+    }
+
+
 
 }

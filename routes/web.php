@@ -38,6 +38,8 @@ Route::group([
 
     Route::get('/', ['uses' => 'HomePageController@create', 'as' => 'homePage']);
 
+    Route::get('/friends', 'userProfileController@addFriends')->name('friends');
+
     Route::get('/newSpot', ['uses' => 'NewSpotController@create', 'as' => 'newSpot']);
     Route::post('/newSpot', ['uses' => 'NewSpotController@store', 'as' => 'postNewSpot']);
 

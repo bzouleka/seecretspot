@@ -97,7 +97,7 @@
             <div class="col-xs-3">
               <div class="icon-image">
               <i class="fa fa-diamond" aria-hidden="true">{{ $spot->likes_count }}</i>
-              <a href="message.html" class="a-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+              <a href="" class="a-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
               </div>
             </div>
             @endforeach
@@ -162,6 +162,7 @@
             </div>
           </div>
 -->
+          </div>
         </section>
 
         <aside class="col-xs-4 hidden-sm hidden-xs">
