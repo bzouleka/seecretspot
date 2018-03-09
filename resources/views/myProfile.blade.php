@@ -46,8 +46,8 @@
                         <textarea name="commentaire" id="ameliorer" rows="2" cols="33" placeholder = "Description..."></textarea><br>
                         <input type="submit" value="Envoyer" />
                     </form>
-                </div>           
-              </div> 
+                </div>
+              </div>
                 <h3>{{ $user['user_name'] }} <a href="{{ asset('parametres.html')}}"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></h3>
                 <div>{{ $user['description'] }}<br/>Contactez moi pour partager<br/>#surf #glisse #montagne</div>
             </div>

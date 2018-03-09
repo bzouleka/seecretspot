@@ -87,6 +87,7 @@ class MyProfileController extends Controller
             $spot->save();
             // echo '$spot->id' . $spot->id;
 
+
             $photos = new Photo();
             $photos->setAttribute('spot_id', $spot->id);
             $photos->setAttribute('picture_name',$fileName);
