@@ -26,12 +26,12 @@
     <section class="row">
         <h1 class="col-xs-8 col-xs-offset-2">{{ $spot->title }}</h1>
         <div class="col-xs-2" style="margin-top: 5vh;text-align: right;">
-            <img src="{{ asset('images/profil-two.jpg') }}" alt="photo profil"
-                 style="width: 30%;"> <span style="font-size: 1.3em">{{ Auth::user()->user_name }}</span> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-user-plus" aria-hidden="true"></i></div>
+            <img src="{{ asset($user->picture_name) }}" alt="photo profil"
+                 style="width: 30%;"><span style="font-size: 1.3em; font-weight: bold;"> {{ $user->user_name }}</span> <i class="fa fa-envelope-o" aria-hidden="true"></i> <i class="fa fa-user-plus" aria-hidden="true"></i></div>
         <img src="{{ asset($spotPic->picture_name) }}" alt="Photo du spot : {{ $spot->title }}" width="100%"/>
         <div class="row">
             <div class="col-xs-10">
-                <p style="padding-top: 5px;">Description : {{ $spot->description_post }}</p>
+                <p style="padding-top: 5px; font-size: "><span style="font-weight: bold">Description : </span>{{ $spot->description_post }}</p>
             </div>
             <div class="col-xs-2 icon-image">
                 <i class="fa fa-diamond" aria-hidden="true">23</i>

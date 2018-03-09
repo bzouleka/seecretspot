@@ -83,10 +83,10 @@
                 </div>
               </div>
             </div>
--->
+-->         @isset($spots)
             @foreach ($spots as $spot)
             <div class="col-xs-12">
-              <img src="{{ asset($spot->picture_name) }}" alt="{{ asset($spot->title) }}" style="width: 100%" class="photo-spot">
+                <a href="{{ '/spot?id='.$spot->id }}"><img src="{{ asset($spot->picture_name) }}" alt="{{ asset($spot->title) }}" style="width: 100%" class="photo-spot"></a>
             </div>
             <div class="col-xs-3">
               <div class="hashtag"><a href="{{ route('userProfile',[$spot->user_id]) }}">{{ $spot->user_name }}</a></div>
@@ -100,8 +100,8 @@
               <a href="message.html" class="a-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
               </div>
             </div>
-            
             @endforeach
+              @endisset
 <!--
             <div class="col-xs-12">
               <img src="images/velo-montagne.jpg" alt="photo-velo-en-croatie" style="width: 100%" class="photo-spot">
