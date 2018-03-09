@@ -86,16 +86,16 @@
 -->
             @isset($spots)
             @foreach ($spots as $spot)
+              <div class="col-xs-12">
+                  <div class="hashtag; photo-spot" style="font-size: 3vh; font-weight: bold;">{{ $spot->title }}</div>
+              </div>
             <div class="col-xs-12">
                 <a href="{{ '/spot?id='.$spot->id }}"><img src="{{ asset($spot->picture_name) }}" alt="{{ asset($spot->title) }}" style="width: 100%" class="photo-spot"></a>
             </div>
-            <div class="col-xs-3">
-              <div class="hashtag"><a href="{{ route('userProfile',[$spot->user_id]) }}">{{ $spot->user_name }}</a></div>
+            <div class="col-xs-6">
+              <div class="hashtag; photo-spot"><a href="{{ route('userProfile',[$spot->user_id]) }}" class="menu_lien_share">{{ $spot->user_name }}</a></div>
             </div>
             <div class="col-xs-6">
-              <div class="hashtag">{{ $spot->title }}</div>
-            </div>
-            <div class="col-xs-3">
               <div class="icon-image">
               <i class="fa fa-diamond" aria-hidden="true">{{ $spot->likes_count }}</i>
               <a href="{{ '/message?id='.$spot->user_id }}" class="a-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
@@ -111,11 +111,11 @@
             <div class="row">
               <h2>Mes Seecret Friends</h2>
               @foreach ($friends as $friend)
-                  <div class="col-xs-12">
+                    <div class="col-xs-6" style="font-weight: bold; font-size: 2.5vh; text-align: right; padding-top: 6.5vh;">{{ $friend->user_name }}</div>
+                  <div class="col-xs-6">
                     <a href="{{ route('userProfile',[$friend->id]) }}">
                       <img src="{{ asset($friend->picture_name) }}" alt="{{ $friend->user_name }}" width="60%" class="photo-profil">
                     </a>
-                    {{ $friend->user_name }}
                   </div>
               @endforeach
             </div>
