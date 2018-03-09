@@ -83,13 +83,14 @@
                 </div>
               </div>
             </div>
--->         @isset($spots)
+-->
+            @isset($spots)
             @foreach ($spots as $spot)
             <div class="col-xs-12">
-              <img src="{{ asset($spot->picture_name) }}" alt="{{ asset($spot->title) }}" style="width: 100%" class="photo-spot">
+                <a href="{{ '/spot?id='.$spot->id }}"><img src="{{ asset($spot->picture_name) }}" alt="{{ asset($spot->title) }}" style="width: 100%" class="photo-spot"></a>
             </div>
             <div class="col-xs-3">
-              <div class="hashtag">{{ $spot->user_name }}</div>
+              <div class="hashtag"><a href="{{ route('userProfile',[$spot->user_id]) }}">{{ $spot->user_name }}</a></div>
             </div>
             <div class="col-xs-6">
               <div class="hashtag">{{ $spot->title }}</div>
@@ -97,73 +98,29 @@
             <div class="col-xs-3">
               <div class="icon-image">
               <i class="fa fa-diamond" aria-hidden="true">{{ $spot->likes_count }}</i>
-              <a href="message.html" class="a-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+              <a href="{{ '/message?id='.$spot->user_id }}" class="a-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
               </div>
             </div>
             
             @endforeach
               @endisset
-<!--
-            <div class="col-xs-12">
-              <img src="images/velo-montagne.jpg" alt="photo-velo-en-croatie" style="width: 100%" class="photo-spot">
-            </div>
-            <div class="col-xs-9">
-              <div class="hashtag"> #Croatie #Vélo </div>
-            </div>
-            <div class="col-xs-3">
-              <div class="icon-image">
-              <i class="fa fa-diamond" aria-hidden="true"></i>
-              <a href="message.html" class="a-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-              </div>
-            </div>
-            <div class="col-xs-12">
-              <img src="images/grotte.jpg" alt="photo-velo-en-croatie" style="width: 100%" class="photo-spot">
-            </div>
-            <div class="col-xs-9">
-              <div class="hashtag"> #Grotte </div>
-            </div>
-            <div class="col-xs-3">
-              <div class="icon-image">
-                <i class="fa fa-diamond" aria-hidden="true"></i>
-                <a href="message.html" class="a-icon">
-                  <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
 
-            <div class="col-xs-12">
-              <img src="images/ruine.jpg" alt="photo-velo-en-croatie" style="width: 100%" class="photo-spot">
-            </div>
-            <div class="col-xs-9">
-              <div class="hashtag"> #ruine </div>
-            </div>
-            <div class="col-xs-3">
-              <div class="icon-image">
-                <i class="fa fa-diamond" aria-hidden="true"></i>
-                <a href="message.html" class="a-icon">
-                  <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-
-
-            <div class="col-xs-12">
-              <img src="images/ruine2.jpg" alt="photo-velo-en-croatie" style="width: 100%" class="photo-spot">
-            </div>
-            <div class="col-xs-9">
-              <div class="hashtag"> #Ruine </div>
-            </div>
-            <div class="col-xs-3">
-              <div class="icon-image">
-                <i class="fa fa-diamond" aria-hidden="true"></i>
-                <a href="message.html" class="a-icon">
-                  <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-          </div>
--->
         </section>
+
+        <aside class="col-xs-4 hidden-sm hidden-xs">
+          <section class="col-xs-12" id="listeamis">
+            <div class="row">
+              <h2>Mes Seecret Friends</h2>
+              @foreach ($friends as $friend)
+                  <div class="col-xs-12">
+                    <a href="{{ route('userProfile',[$friend->id]) }}">
+                      <img src="{{ asset($friend->picture_name) }}" alt="{{ $friend->user_name }}" width="60%" class="photo-profil">
+                    </a>
+                    {{ $friend->user_name }}
+                  </div>
+              @endforeach
+            </div>
+          </section>
 
         <aside class="col-xs-4 hidden-sm hidden-xs">
           <div class="row"></div>

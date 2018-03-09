@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Auth\Authenticatable as BasicAuthenticatable;
 
+
 class User extends Model implements Authenticatable
 {
     use BasicAuthenticatable;
@@ -20,6 +21,11 @@ class User extends Model implements Authenticatable
     public function comments()
     {
         return $this->hasMany('App\Comments');
+    }
+
+    public function likes()
+    {
+        return $this->hasMany('App\Like');
     }
 
 
