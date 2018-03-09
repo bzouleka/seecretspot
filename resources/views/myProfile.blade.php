@@ -21,15 +21,17 @@
                 </div>           
               </div> 
 
-            @foreach ($friends as $friend)
               <div class="row">
-                <div class="col-md-6">
+                <h2>Mes Seecret Friends</h2>              
+                @foreach ($friends as $friend)
+                  <div class="col-md-6">
                     <br/>
                     <img src="{{ asset($friend->picture_name) }} " alt="{{ $friend->user_name }}" width="100%" />
-                </div>
-                <div>{{ $friend->user_name }}</div>
+                  </div>
+                 {{ $friend->user_name }}
+              
+                @endforeach
               </div>
-            @endforeach
 <!--                <div><br/>Contactez moi pour partager<br/>#surf #glisse #montagne</div>   -->
             </div>
 

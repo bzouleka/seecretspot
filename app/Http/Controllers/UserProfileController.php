@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Friend;
 
 class UserProfileController extends Controller
 {
@@ -15,8 +16,6 @@ class UserProfileController extends Controller
      */
     public function create(User $user)
     {
-
-        $user = Auth::user();
 
 //      look for users's spots
        $spots = DB::table('spots')
@@ -34,4 +33,25 @@ class UserProfileController extends Controller
         //dd($user);
 
     }
+
+    public function friends(User $user2) {
+        $user1 = Auth::user();
+//        echo  $user1->id . ' - ' . $user2->id;
+
+//  ajouter la vérif que l'amitié n'a pas déjà été créé.
+
+            $friend = new Friend();
+            $friend->setAttribute('id_user1',$user1->id);
+            $friend->setAttribute('id_user2',$user2->id);
+            $friend->setAttribute('status',"accepté");
+            $friend->save();
+            //dd($friend);
+//        }
+
+//      re-chargement de la page
+        return redirect()->route('userProfile',[$user2->id]);
+
+    } 
+
 }
+
