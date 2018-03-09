@@ -37,7 +37,7 @@
 
           <div class="row">
 
-<!--  1èere photo avec carrousel
+<!--  1èere photo avec carrousel          
             <div class="col-xs-12 photo-spot">
               <div class="row" id="choupi">
                 <div class="col-sm-1 hidden-xs" id="gauche">
@@ -45,13 +45,13 @@
                 </div>
                 <div class="col-sm-10 col-xs-12" id="carrouselImages">
                   <img src="images/col-de-la-forclaz.jpg" alt="Col de la Forclaz" class="imagesCarrousel" id="premiereImage" />
-
+            
                   <img src="images/gorges-du-fier.jpg" alt="Gorges du Fier" class="imagesCarrousel secondImages" />
-
+            
                   <img src="images/Les-Aravis-Lac-des-Confins.jpg" alt="Lac des Confins" class="imagesCarrousel secondImages" />
-
+            
                   <img src="images/arriveeSousFauteuil_tournette.jpg" alt="La Tournette" class="imagesCarrousel secondImages" />
-
+            
                   <img src="images/croix-du-nivolet.jpg" alt="Croix du Nivolet" class="imagesCarrousel secondImages" />
                 </div>
                 <div class="col-sm-1 hidden-xs" id="droit">
@@ -101,6 +101,7 @@
               <a href="{{ '/message?id='.$spot->user_id }}" class="a-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
               </div>
             </div>
+            
             @endforeach
               @endisset
 
@@ -121,6 +122,9 @@
             </div>
           </section>
 
+        <aside class="col-xs-4 hidden-sm hidden-xs">
+          <div class="row"></div>
+          <h2 class="col-xs-12">Mes Seecret Friends :</h2>
           <section class="col-xs-12" id="listeamis"></section>
         </aside>
 

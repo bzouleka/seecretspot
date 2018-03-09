@@ -35,16 +35,20 @@
 
             <div class="form-group">
               <label for="last_name">Nom</label>
-              <input type="text" name="last_name" id="nom" class="form-control"
+              <input type="text" name="last_name" id="nom" class="form-control" value="{{$user->last_name}}"
                 placeholder="Votre nom" />
+              {!! $errors->first('last_name', '<div class="invalid-feedback">:message</div>') !!}
+
               <div class="help-block with-errors"></div>
             </div>
               <div class="help-block with-errors"></div>
             <br />
             <div class="form-group">
               <label for="first_name">Prénom</label>
-              <input type="text" name="first_name" id="prenom" class="form-control" placeholder="Votre prénom"
+              <input type="text" name="first_name" id="prenom" class="form-control" placeholder="Votre prénom" value="{{$user->first_name}}"
               />
+              {!! $errors->first('first_name', '<div class="invalid-feedback">:message</div>') !!}
+
               <div class="help-block with-errors"></div>
             </div>
 
@@ -54,7 +58,7 @@
             <br />
             <div class="form-group">
               <label for="birthday">date de Naissance</label>
-              <input type="date" name="birthday" id="dateNaissance" class="form-control" placeholder="Votre prénom"
+              <input type="date" name="birthday" id="dateNaissance" class="form-control" placeholder="" value="{{$user->birthday}}"
               />
               <div class="help-block with-errors"></div>
             </div>
@@ -64,19 +68,21 @@
             <br />
             <div class="form-group">
               <label for="user_name">Nom d'utilisateur</label>
-              <input type="text" name="user_name" id="utilisateur" class="form-control" placeholder="nom d'utilisateur" />
+              <input type="text" name="user_name" id="utilisateur" class="form-control" placeholder="nom d'utilisateur" value="{{$user->user_name}}" />
+              {!! $errors->first('user_name', '<div class="invalid-feedback">:message</div>') !!}
+
               <div class="help-block with-errors"></div>
             </div>
             <br />
             <div class="form-group">
               <label for="email">E-mail</label>
-              <input type="email" name="email" id="mail" class="form-control" placeholder="votre email" />
+              <input type="email" name="email" id="mail" class="form-control" placeholder="votre email"  value="{{$user->email}}"/>
               <div class="help-block with-errors"></div>
             </div>
             <br />
             <div class="form-group">
               <label for="description">Description</label>
-              <textarea name="description" id="description" class="form-control"  placeholder="Votre description">{{ $user['description']}}</textarea>
+              <textarea name="description" id="description" class="form-control"  placeholder="Votre description">{{ $user->description}}</textarea>
               <div class="help-block with-errors"></div>
             </div>
             <br />
@@ -84,11 +90,7 @@
           <fieldset>
             <legend>Mot de passe</legend>
             <br/>
-            <div class="form-group">
-              <label for="old_pass">Ancien mot de passe</label>
-              <input type="password" name="old_pass" id="old-pass" class="form-control" />
-              <div class="help-block with-errors"></div>
-            </div>
+
             <br />
             <div class="form-group">
               <label for="password">Nouveau mot de passe</label>
@@ -97,12 +99,7 @@
               <div class="help-block with-errors"></div>
             </div>
             <br />
-            <div class="form-group">
-              <label for="password_confirmation"> Confirmation du nouveau mot de passe</label>
-              <input type="password" name="password_confirmation" id="new-pass-2" class="form-control"  />
-              <div class="help-block with-errors"></div>
-            </div>
-            <br />
+
           </fieldset>
           <fieldset>
             <legend>Notification</legend>
