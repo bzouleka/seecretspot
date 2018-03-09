@@ -37,7 +37,7 @@
 
           <div class="row">
 
-<!--  1èere photo avec carrousel          
+<!--  1èere photo avec carrousel
             <div class="col-xs-12 photo-spot">
               <div class="row" id="choupi">
                 <div class="col-sm-1 hidden-xs" id="gauche">
@@ -45,13 +45,13 @@
                 </div>
                 <div class="col-sm-10 col-xs-12" id="carrouselImages">
                   <img src="images/col-de-la-forclaz.jpg" alt="Col de la Forclaz" class="imagesCarrousel" id="premiereImage" />
-            
+
                   <img src="images/gorges-du-fier.jpg" alt="Gorges du Fier" class="imagesCarrousel secondImages" />
-            
+
                   <img src="images/Les-Aravis-Lac-des-Confins.jpg" alt="Lac des Confins" class="imagesCarrousel secondImages" />
-            
+
                   <img src="images/arriveeSousFauteuil_tournette.jpg" alt="La Tournette" class="imagesCarrousel secondImages" />
-            
+
                   <img src="images/croix-du-nivolet.jpg" alt="Croix du Nivolet" class="imagesCarrousel secondImages" />
                 </div>
                 <div class="col-sm-1 hidden-xs" id="droit">
@@ -83,7 +83,7 @@
                 </div>
               </div>
             </div>
---> 
+-->
             @isset($spots)
             @foreach ($spots as $spot)
             <div class="col-xs-12">
@@ -98,7 +98,7 @@
             <div class="col-xs-3">
               <div class="icon-image">
               <i class="fa fa-diamond" aria-hidden="true">{{ $spot->likes_count }}</i>
-              <a href="message.html" class="a-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+              <a href="{{ '/message?id='.$spot->user_id }}" class="a-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
               </div>
             </div>
             @endforeach
@@ -120,7 +120,7 @@
               @endforeach
             </div>
           </section>
-          
+
           <section class="col-xs-12" id="listeamis"></section>
         </aside>
 

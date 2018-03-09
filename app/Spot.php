@@ -27,4 +27,9 @@ class Spot extends Model
     {
         return $this->hasMany('App\Comments');
     }
+
+    public function likes()
+    {
+        return $this->hasMany('App\Like');
+    }
 }
