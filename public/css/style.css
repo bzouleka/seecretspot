@@ -284,12 +284,12 @@ li
   color: pink;
 }
 
-#menu_lien_share:link, #menu_lien_share:visited, #menu_lien_share:active
+.menu_lien_share:link, .menu_lien_share:visited, .menu_lien_share:active
 {
  color: black;
 }
 
- #menu_lien_share:hover
+.menu_lien_share:hover
  {
   color: rgb(74, 187, 252);
  }
