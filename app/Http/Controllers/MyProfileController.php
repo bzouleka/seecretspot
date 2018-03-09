@@ -20,7 +20,6 @@ class MyProfileController extends Controller
 //    public function create(App\User $user)
 {
         $user = Auth::user();
-        //dd($user);
                 
 //      look for users's spots
         $spots = DB::table('spots')

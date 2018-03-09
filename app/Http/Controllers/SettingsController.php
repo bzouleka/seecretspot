@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\SettingsRequest;
-
+use Illuminate\Support\Facades\Hash;
 
 class SettingsController extends Controller
 {
@@ -27,6 +27,7 @@ class SettingsController extends Controller
             $user->last_name = $request['last_name'];
 
 
+        if (isset($request->old_pass) && isset($request->password) && isset($request->password_confirmation)) {
         }
         if(isset($request['first_name']) && !empty($request['first_name'])) {
             $user->first_name = $request['first_name'];
@@ -48,6 +49,25 @@ class SettingsController extends Controller
         }
         $user->update();
 
-        return redirect()->route('myProfile');
+            if (!(Hash::check($request->get('old_pass'), Auth::user()->password))) {    // pour vérifier si les passwords match
+                return redirect()->back()->with("erreur", "Votre mot de passe actuel ne correspond pas au mot de passe que vous avez fourni.");
+            }
+            if (strcmp($request->get('old_pass'), $request->get('password_confirmation')) == 0) {
+                //Current password and new password are same
+                return redirect()->back()->with("erreur", "Le nouveau mot de passe ne peut pas être le même que votre mot de passe actuel.");
+            }
+            $request->validate([
+                'old_pass' => 'required',
+                'password' => 'required|string|confirmed',
+            ]);
+
+
+            //if(isset($request['password']) && !empty($request['password'])) {
+            //     $user->password = $request['password'];
+            // }
+            $user->password = bcrypt($request->get('password'));
+            $user->update();
+            return redirect()->route('myProfile');
+        }
     }
 }
