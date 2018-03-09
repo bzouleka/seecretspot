@@ -28,43 +28,49 @@
     <div id="formparametrediv" class="col-lg-offset-4 col-lg-6 col-lg-offset-4">
       <div class="row">
         <form id="formparametre" class="well" role="form" method="post" action="{{ Route('postSettings') }}">
+          @csrf
           <fieldset>
-            @csrf
             <legend>
               <span class="hidden-xs">Parametre de votre </span>Compte</legend>
 
             <div class="form-group">
-              <label for="nom">Nom</label>
-              <input type="text" name="last_name" id="nom" class="form-control"  placeholder="Votre nom" value="{{ $user['last_name']}}"/>
+              <label for="last_name">Nom</label>
+              <input type="text" name="last_name" id="nom" class="form-control"
+                placeholder="Votre nom" />
+              <div class="help-block with-errors"></div>
             </div>
               <div class="help-block with-errors"></div>
             <br />
             <div class="form-group">
-              <label for="prenom">Prénom</label>
-              <input type="text" name="first_name" id="prenom" class="form-control"  placeholder="Votre prénom" value="{{ $user['first_name']}}"/>
-            </div>
-
-
+              <label for="first_name">Prénom</label>
+              <input type="text" name="first_name" id="prenom" class="form-control" placeholder="Votre prénom"
+              />
               <div class="help-block with-errors"></div>
-
-            <br />
-            <div class="form-group">
-              <label for="dateNaissance">date de Naissance</label>
-              <input type="date" name="birthday" id="dateNaissance" class="form-control" placeholder="Votre prénom" value="{{ $user['birthday']}}"  />
             </div>
+
 
               <div class="help-block with-errors"></div>
 
             <br />
             <div class="form-group">
-              <label for="utilisateur">Nom d'utilisateur</label>
-              <input type="text" name="user_name" id="utilisateur" class="form-control" value="{{ $user['user_name']}}" />
+              <label for="birthday">date de Naissance</label>
+              <input type="date" name="birthday" id="dateNaissance" class="form-control" placeholder="Votre prénom"
+              />
+              <div class="help-block with-errors"></div>
+            </div>
+
+              <div class="help-block with-errors"></div>
+
+            <br />
+            <div class="form-group">
+              <label for="user_name">Nom d'utilisateur</label>
+              <input type="text" name="user_name" id="utilisateur" class="form-control" placeholder="nom d'utilisateur" />
               <div class="help-block with-errors"></div>
             </div>
             <br />
             <div class="form-group">
-              <label for="mail">E-mail</label>
-              <input type="email" name="email" id="mail" class="form-control" placeholder="votre email" value="{{ $user['email']}}" />
+              <label for="email">E-mail</label>
+              <input type="email" name="email" id="mail" class="form-control" placeholder="votre email" />
               <div class="help-block with-errors"></div>
             </div>
             <br />
@@ -79,20 +85,20 @@
             <legend>Mot de passe</legend>
             <br/>
             <div class="form-group">
-              <label for="old-pass">Ancien mot de passe</label>
-              <input type="password" name="old-pass" id="old-pass" class="form-control" />
+              <label for="old_pass">Ancien mot de passe</label>
+              <input type="password" name="old_pass" id="old-pass" class="form-control" />
               <div class="help-block with-errors"></div>
             </div>
             <br />
             <div class="form-group">
-              <label for="new-pass-1">Nouveau mot de passe</label>
+              <label for="password">Nouveau mot de passe</label>
               <input type="password" name="password" id="new-pass-1" class="form-control" />
 
               <div class="help-block with-errors"></div>
             </div>
             <br />
             <div class="form-group">
-              <label for="new-pass-2"> Confirmation du nouveau mot de passe</label>
+              <label for="password_confirmation"> Confirmation du nouveau mot de passe</label>
               <input type="password" name="password_confirmation" id="new-pass-2" class="form-control"  />
               <div class="help-block with-errors"></div>
             </div>
