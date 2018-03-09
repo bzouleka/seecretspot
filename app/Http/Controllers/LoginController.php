@@ -25,7 +25,9 @@ class LoginController extends Controller
         }
         return back()->withErrors([
             'user_name' => "Vos identifiants sont incorrects."
+
         ]);
+
     }
 
         public function logout()
