@@ -24,8 +24,11 @@ class SpotController extends Controller
         $spotPic = DB::table('photos')->where('spot_id', $spot->id)->first();
         $comments = DB::table('comments')->where('id_spot', $spot->id)->get();
         $user = DB::table('users')->where('id', $spot->user_id)->first();
-        //dd($user);
-        return view('spot', ['spot' => $spot, 'spotPic' => $spotPic,'comments' => $comments,'user' => $user]);
+        $like = DB::table('likes')->where([
+            ['id_user', Auth::user()->id],
+            ['id_spot', $spot->id],
+        ])->first();
+        return view('spot', ['spot' => $spot, 'spotPic' => $spotPic,'comments' => $comments,'user' => $user,'like' => $like]);
     }
 
     /**
