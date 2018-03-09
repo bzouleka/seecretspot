@@ -41,7 +41,7 @@ Route::group([
     Route::get('/newSpot', ['uses' => 'NewSpotController@create', 'as' => 'newSpot']);
     Route::post('/newSpot', ['uses' => 'NewSpotController@store', 'as' => 'postNewSpot']);
 
-    Route::get('/spot/{spot}', ['uses' => 'SpotController@create', 'as' => 'spot']);
+    Route::get('/spot', ['uses' => 'SpotController@create', 'as' => 'spot']);
     Route::post('/spot', ['uses' => 'SpotController@store', 'as' => 'postSpot']);
 
     Route::get('/results', ['uses' => 'ResultsController@create', 'as' => 'results']);
