@@ -33,7 +33,7 @@ Route::group([
     Route::get('/myProfile', 'MyProfileController@create')->name('myProfile');
     Route::post('/myProfile', 'MyProfileController@post')->name('postMyProfile');
 
-    Route::get('/userProfile/{user_id}', 'UserProfileController@create')->name('userProfile');
+    Route::get('/userProfile/{user}', 'UserProfileController@create')->name('userProfile');
     Route::post('/userProfile', 'UserProfileController@post')->name('postUserProfile');
 
     Route::get('/', ['uses' => 'HomePageController@create', 'as' => 'homePage']);
@@ -41,7 +41,7 @@ Route::group([
     Route::get('/newSpot', ['uses' => 'NewSpotController@create', 'as' => 'newSpot']);
     Route::post('/newSpot', ['uses' => 'NewSpotController@store', 'as' => 'postNewSpot']);
 
-    Route::get('/spot', ['uses' => 'SpotController@create', 'as' => 'spot']);
+    Route::get('/spot/{spot}', ['uses' => 'SpotController@create', 'as' => 'spot']);
     Route::post('/spot', ['uses' => 'SpotController@store', 'as' => 'postSpot']);
 
     Route::get('/results', ['uses' => 'ResultsController@create', 'as' => 'results']);
