@@ -7,6 +7,9 @@ use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Auth\Authenticatable as BasicAuthenticatable;
 
 
+/**
+ * @property mixed id
+ */
 class User extends Model implements Authenticatable
 {
     use BasicAuthenticatable;
@@ -23,7 +26,8 @@ class User extends Model implements Authenticatable
         return $this->hasMany('App\Comments');
     }
 
-    /*public function friends() {
+    /* function pour ajouter des amis a tester
+     * public function friends() {
         return $this->hasMany(friends)->orWhere('id_user2', $this->id);
     }*/
 
