@@ -20,6 +20,16 @@
                     </form>
                 </div>           
               </div> 
+
+            @foreach ($friends as $friend)
+              <div class="row">
+                <div class="col-md-6">
+                    <br/>
+                    <img src="{{ asset($friend->picture_name) }} " alt="{{ $friend->user_name }}" width="100%" />
+                </div>
+                <div>{{ $friend->user_name }}</div>
+              </div>
+            @endforeach
 <!--                <div><br/>Contactez moi pour partager<br/>#surf #glisse #montagne</div>   -->
             </div>
 
@@ -36,17 +46,18 @@
                         <textarea name="commentaire" id="ameliorer" rows="2" cols="33" placeholder = "Description..."></textarea><br>
                         <input type="submit" value="Envoyer" />
                     </form>
-                </div>           
-              </div> 
+                </div>
+              </div>
                 <h3>{{ $user['user_name'] }} <a href="{{ asset('parametres.html')}}"><i class="fa fa-pencil-square" aria-hidden="true"></i></a></h3>
                 <div>{{ $user['description'] }}<br/>Contactez moi pour partager<br/>#surf #glisse #montagne</div>
             </div>
   -->
             <div class="col-md-8">
 
-                @foreach ($spots as $spot)
-                <img src="{{ asset($spot->picture_name) }}" 
-                     alt="{{ asset($spot->title) }}" width="100%" />
+              @foreach ($spots as $spot)
+                <a href="{{ '/spot?id='.$spot->id }}">
+                    <img src="{{ asset($spot->picture_name) }}" alt="{{ asset($spot->title) }}" width="100%" />
+                </a>
                 <div class="row">
                     <div class="col-xs-6">
                         <p>{{ $spot->title }}</p>
@@ -62,7 +73,7 @@
                         <p>{{ $spot->description_post }}</p>
                     </div>
                 </div>
-                @endforeach
+              @endforeach
             </div>
         </section>
     </div>
