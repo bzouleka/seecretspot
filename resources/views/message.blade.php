@@ -29,9 +29,10 @@
           <span class="hidden-sm hidden-xs">Écrire à un autre Seecret Spoter</span>
         </h2>
         <form method="post" action=".php">
+          @csrf
           <div class="col-xs-12">
 
-            <input type="text" name="contact" id="contact">
+            <input type="text" name="contact" id="contact" @isset($user)value="{{$user}}"@endisset>
             <label for="contact">
               <i class="fa fa-at" aria-hidden="true"></i>
             </label>

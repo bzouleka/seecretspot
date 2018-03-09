@@ -28,7 +28,7 @@
         <div class="col-xs-2" style="margin-top: 5vh;text-align: right;">
             <a href="{{ route('userProfile',[$spot->user_id]) }}"><img src="{{ asset($user->picture_name) }}" alt="photo profil"
                                                                        style="width: 30%;"></a><span style="font-size: 1.3em; font-weight: bold;"> {{ $user->user_name }}</span>
-            <a href="{{ route('message') }}" class="menu_user"><i class="fa fa-envelope-o" aria-hidden="true" style="font-size: 1vw;"></i></a>
+            <a href="{{ '/message?id='.$spot->user_id }}" class="menu_user"><i class="fa fa-envelope-o" aria-hidden="true" style="font-size: 1vw;"></i></a>
             <a href="" class="menu_user"><i class="fa fa-user-plus" aria-hidden="true" style="font-size: 1vw;"></i></a></div>
         <img src="{{ asset($spotPic->picture_name) }}" alt="Photo du spot : {{ $spot->title }}" width="100%"/>
         <div class="row">
@@ -47,10 +47,10 @@
             <form method="post" action="{{ route('postComments') }}" class="col-xs-12">
                 @csrf
                 <br>
-                <label for="content">Votre commentaire :</label><br>
+                <label for="content"><span style="font-size: 1.2em;">Votre commentaire :</span> (max. 255 caractères)</label><br>
                 <textarea name="content" class="commentaire" style="width: 100%; height: 70px;"></textarea>
                 <input type="hidden" name="id" value="{{ $spot->id }}" style="border-radius: 3px;">
-                <input type="submit" value="Envoyer" style="text-align: right;"/>
+                <input type="submit" value="Envoyer" style="margin-top: 0px;" id="bouton-message"/>
             </form>
         </div>
     </section>

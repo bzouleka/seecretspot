@@ -16,7 +16,7 @@ class UserProfileController extends Controller
     public function create(User $user)
     {
 
-        $user = Auth::user();
+        //$user = Auth::user();
 
 //      look for users's spots
        $spots = DB::table('spots')
