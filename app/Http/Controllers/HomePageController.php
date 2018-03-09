@@ -17,16 +17,18 @@ class HomePageController extends Controller
 //  @  parameters : null
 //  @  return function view myprofile with parameters spots, user, friends
 
-public function create()
+    public function create()
 //    public function create(App\User $user)
 {
-                
+        $user = Auth::user();     
+    
 //      look for users's spots
         $spots = DB::table('spots')
             ->select(db::raw('spots.id,spots.title,photos.picture_name,description_post,user_id,user_name,count(likes.id_user) as likes_count'))
             ->join('users','spots.user_id','=','users.id')
             ->join('photos','spots.id','=','photos.spot_id')
             ->leftjoin('likes','spots.id','=','likes.id_spot')
+            ->where('user_id','!=',$user->id)
             ->whereNotNull ('priority')
             ->groupBy('spots.id','spots.title','photos.picture_name','description_post','user_id','user_name')
             ->orderBy('spots.id','desc')
