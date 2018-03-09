@@ -34,7 +34,7 @@ Route::group([
     Route::post('/myProfile', 'MyProfileController@post')->name('postMyProfile');
 
     Route::get('/userProfile/{user}', 'UserProfileController@create')->name('userProfile');
-    Route::post('/userProfile', 'UserProfileController@post')->name('postUserProfile');
+    Route::get('/userProfileFriends{user2}', 'UserProfileController@friends')->name('friendsUserProfile');
 
     Route::get('/', ['uses' => 'HomePageController@create', 'as' => 'homePage']);
 
@@ -49,6 +49,8 @@ Route::group([
     Route::get('/results', ['uses' => 'ResultsController@create', 'as' => 'results']);
 
     Route::get('/logout', 'LoginController@logout')->name('logout');
+
+    Route::get('/like', 'LikeController@store')->name('like');
 
     Route::post('/comments', 'CommentsController@store')->name('postComments');
 

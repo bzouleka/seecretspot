@@ -8,22 +8,15 @@
             <div class="col-md-4" id="test">
                 <div class="row">
                     <div class="col-md-6">
-                        <br/>
-
                         <img src="{{ asset($user['picture_name']) }} " alt="Photo de profil" width="100%" />
-
-                        <p>Je suis passionnée de sports de glisse toujours à la recherche des meilleurs spots!
-                            Contactez moi pour partager
-                            #surf #glisse #montagne</p>
+                        <p>{{ $user['description'] }}</p>
                     </div>
                     <div class="col-md-6">
-
                         <h4>{{ $user['user_name'] }}
-
-                            <a href="{{route('friends')}}"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
-
+                            <a href="{{ route('friendsUserProfile',$user['id']) }}">
+                                <i class="fa fa-user-plus" aria-hidden="true"></i>
+                            </a>
                         </h4>
-
                     </div>
                 </div>
             </div>
@@ -39,7 +32,8 @@
                                     <p>{{ $spot->title }}</p>
                                 </div>
                                 <div class="col-xs-6">
-                                    <a href="{{route('message')}}"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                    <i class="fa fa-search-plus" aria-hidden="true"></i>
                                     <i class="fa fa-diamond" aria-hidden="true">{{ $spot->likes_count }}</i>
                                 </div>
                             </div>
@@ -51,12 +45,8 @@
                         @endforeach
 
                     </div>
-
-
         </section>
     </div>
-
-
 @endsection
 
 @section('js')

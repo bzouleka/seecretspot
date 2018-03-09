@@ -33,8 +33,26 @@ class MyProfileController extends Controller
             ->get();
 
         //dd ($spots);
+
+//      look fr friends
+        $friends1 = DB::table('friends')
+            ->select(db::raw('id_user2 as id,status,user_name,picture_name'))
+            ->join('users','id_user2','=','users.id')
+            ->where('id_user1','=',$user->id)
+            ->where('status','=','accepté');
+
+                   
+        $friends = DB::table('friends')
+            ->select(db::raw('id_user1 as id,status,user_name,picture_name'))
+            ->join('users','id_user1','=','users.id')
+            ->where('id_user2','=',$user->id)
+            ->where('status','=','accepté')
+            ->union($friends1)
+            ->get();
+
+        //dd($friends);
  
-        return view('myProfile',["user"=>$user, "spots"=>$spots]);
+        return view('myProfile',["user"=>$user, "spots"=>$spots, "friends"=>$friends]);
     }
 
 //  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

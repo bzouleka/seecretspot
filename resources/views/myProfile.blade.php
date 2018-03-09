@@ -20,6 +20,18 @@
                     </form>
                 </div>           
               </div> 
+
+              <div class="row">
+                <h2>Mes Seecret Friends</h2>              
+                @foreach ($friends as $friend)
+                  <div class="col-md-6">
+                    <br/>
+                    <img src="{{ asset($friend->picture_name) }} " alt="{{ $friend->user_name }}" width="100%" />
+                  </div>
+                 {{ $friend->user_name }}
+              
+                @endforeach
+              </div>
 <!--                <div><br/>Contactez moi pour partager<br/>#surf #glisse #montagne</div>   -->
             </div>
 
@@ -44,9 +56,10 @@
   -->
             <div class="col-md-8">
 
-                @foreach ($spots as $spot)
-                <img src="{{ asset($spot->picture_name) }}" 
-                     alt="{{ asset($spot->title) }}" width="100%" />
+              @foreach ($spots as $spot)
+                <a href="{{ '/spot?id='.$spot->id }}">
+                    <img src="{{ asset($spot->picture_name) }}" alt="{{ asset($spot->title) }}" width="100%" />
+                </a>
                 <div class="row">
                     <div class="col-xs-6">
                         <p>{{ $spot->title }}</p>
@@ -62,7 +75,7 @@
                         <p>{{ $spot->description_post }}</p>
                     </div>
                 </div>
-                @endforeach
+              @endforeach
             </div>
         </section>
     </div>

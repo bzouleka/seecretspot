@@ -37,7 +37,7 @@
 
           <div class="row">
 
-<!--  1èere photo avec carrousel          
+<!--  1èere photo avec carrousel
             <div class="col-xs-12 photo-spot">
               <div class="row" id="choupi">
                 <div class="col-sm-1 hidden-xs" id="gauche">
@@ -45,13 +45,13 @@
                 </div>
                 <div class="col-sm-10 col-xs-12" id="carrouselImages">
                   <img src="images/col-de-la-forclaz.jpg" alt="Col de la Forclaz" class="imagesCarrousel" id="premiereImage" />
-            
+
                   <img src="images/gorges-du-fier.jpg" alt="Gorges du Fier" class="imagesCarrousel secondImages" />
-            
+
                   <img src="images/Les-Aravis-Lac-des-Confins.jpg" alt="Lac des Confins" class="imagesCarrousel secondImages" />
-            
+
                   <img src="images/arriveeSousFauteuil_tournette.jpg" alt="La Tournette" class="imagesCarrousel secondImages" />
-            
+
                   <img src="images/croix-du-nivolet.jpg" alt="Croix du Nivolet" class="imagesCarrousel secondImages" />
                 </div>
                 <div class="col-sm-1 hidden-xs" id="droit">
@@ -83,7 +83,8 @@
                 </div>
               </div>
             </div>
--->         @isset($spots)
+-->
+            @isset($spots)
             @foreach ($spots as $spot)
             <div class="col-xs-12">
                 <a href="{{ '/spot?id='.$spot->id }}"><img src="{{ asset($spot->picture_name) }}" alt="{{ asset($spot->title) }}" style="width: 100%" class="photo-spot"></a>
@@ -97,77 +98,29 @@
             <div class="col-xs-3">
               <div class="icon-image">
               <i class="fa fa-diamond" aria-hidden="true">{{ $spot->likes_count }}</i>
-              <a href="" class="a-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+              <a href="{{ '/message?id='.$spot->user_id }}" class="a-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
               </div>
             </div>
             @endforeach
               @endisset
-<!--
-            <div class="col-xs-12">
-              <img src="images/velo-montagne.jpg" alt="photo-velo-en-croatie" style="width: 100%" class="photo-spot">
-            </div>
-            <div class="col-xs-9">
-              <div class="hashtag"> #Croatie #Vélo </div>
-            </div>
-            <div class="col-xs-3">
-              <div class="icon-image">
-              <i class="fa fa-diamond" aria-hidden="true"></i>
-              <a href="message.html" class="a-icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-              </div>
-            </div>
-            <div class="col-xs-12">
-              <img src="images/grotte.jpg" alt="photo-velo-en-croatie" style="width: 100%" class="photo-spot">
-            </div>
-            <div class="col-xs-9">
-              <div class="hashtag"> #Grotte </div>
-            </div>
-            <div class="col-xs-3">
-              <div class="icon-image">
-                <i class="fa fa-diamond" aria-hidden="true"></i>
-                <a href="message.html" class="a-icon">
-                  <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
 
-            <div class="col-xs-12">
-              <img src="images/ruine.jpg" alt="photo-velo-en-croatie" style="width: 100%" class="photo-spot">
-            </div>
-            <div class="col-xs-9">
-              <div class="hashtag"> #ruine </div>
-            </div>
-            <div class="col-xs-3">
-              <div class="icon-image">
-                <i class="fa fa-diamond" aria-hidden="true"></i>
-                <a href="message.html" class="a-icon">
-                  <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-
-
-            <div class="col-xs-12">
-              <img src="images/ruine2.jpg" alt="photo-velo-en-croatie" style="width: 100%" class="photo-spot">
-            </div>
-            <div class="col-xs-9">
-              <div class="hashtag"> #Ruine </div>
-            </div>
-            <div class="col-xs-3">
-              <div class="icon-image">
-                <i class="fa fa-diamond" aria-hidden="true"></i>
-                <a href="message.html" class="a-icon">
-                  <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-          </div>
--->
-          </div>
         </section>
 
         <aside class="col-xs-4 hidden-sm hidden-xs">
-          <div class="row"></div>
-          <h2 class="col-xs-12">Mes Seecret Friends :</h2>
+          <section class="col-xs-12" id="listeamis">
+            <div class="row">
+              <h2>Mes Seecret Friends</h2>
+              @foreach ($friends as $friend)
+                  <div class="col-xs-12">
+                    <a href="{{ route('userProfile',[$friend->id]) }}">
+                      <img src="{{ asset($friend->picture_name) }}" alt="{{ $friend->user_name }}" width="60%" class="photo-profil">
+                    </a>
+                    {{ $friend->user_name }}
+                  </div>
+              @endforeach
+            </div>
+          </section>
+
           <section class="col-xs-12" id="listeamis"></section>
         </aside>
 
