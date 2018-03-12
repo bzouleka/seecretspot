@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+use App\Http\Controllers;
+
 class SettingsRequest extends FormRequest
 {
     /**
@@ -26,16 +28,14 @@ class SettingsRequest extends FormRequest
      */
     public function rules(request $request)
     {
-
-        $validateData = $request->validate([
+        $this->validate($request,[
             'last_name' => 'min:2|max:40',
             'first_name' => 'min:2|max:40',
             'email' => 'email|unique:users',
             'user_name' => 'unique:users',
             'password' => 'min:6',
-            'phone' => 'alpha|min:10|max:10',
 
-        ]);
+            ]);
 
     }
 

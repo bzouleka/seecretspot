@@ -27,7 +27,7 @@
         <h1 class="col-xs-8 col-xs-offset-2">{{ $spot->title }}</h1>
         <div class="col-xs-2" style="margin-top: 5vh;text-align: right;">
             <a href="{{ route('userProfile',[$spot->user_id]) }}"><img src="{{ asset($user->picture_name) }}" alt="photo profil"
-                                                                       style="width: 30%;"></a><span style="font-size: 1.3em; font-weight: bold;"> {{ $user->user_name }}</span>
+               style="width: 30%;"></a><span style="font-size: 1.3em; font-weight: bold;"> {{ $user->user_name }}</span>
             <a href="{{ '/message?id='.$spot->user_id }}" class="menu_user"><i class="fa fa-envelope-o" aria-hidden="true" style="font-size: 1vw;"></i></a>
             <a href="" class="menu_user"><i class="fa fa-user-plus" aria-hidden="true" style="font-size: 1vw;"></i></a></div>
         <img src="{{ asset($spotPic->picture_name) }}" alt="Photo du spot : {{ $spot->title }}" width="100%"/>
