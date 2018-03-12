@@ -57,24 +57,28 @@
             <div class="col-md-8">
 
               @foreach ($spots as $spot)
-                <a href="{{ '/spot?id='.$spot->id }}">
-                    <img src="{{ asset($spot->picture_name) }}" alt="{{ asset($spot->title) }}" width="100%" />
-                </a>
-                <div class="row">
-                    <div class="col-xs-6">
-                        <p>{{ $spot->title }}</p>
-                    </div>
-                    <div class="col-xs-6">
-                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                        <i class="fa fa-search-plus" aria-hidden="true"></i>
-                        <i class="fa fa-diamond" aria-hidden="true">{{ $spot->likes_count }}</i>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <p>{{ $spot->description_post }}</p>
-                    </div>
-                </div>
+                @foreach ($spot->photos as $photo)
+                    @if ($photo->priority != null)
+                        <a href="{{ '/spot?id='.$spot->id }}">
+                            <img src="{{ asset($photo->picture_name) }}" alt="{{ asset($spot->title) }}" width="100%" />
+                        </a>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <p>{{ $spot->title }}</p>
+                            </div>
+                            <div class="col-xs-6">
+                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                                <i class="fa fa-diamond" aria-hidden="true">{{ $spot->likes_count }}</i>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <p>{{ $spot->description_post }}</p>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach                
               @endforeach
             </div>
         </section>

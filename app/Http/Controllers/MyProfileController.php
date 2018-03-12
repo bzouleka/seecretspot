@@ -22,7 +22,10 @@ class MyProfileController extends Controller
         $user = Auth::user();
                 
 //      look for users's spots
-        $spots = DB::table('spots')
+        $spots = Spot::where('user_id','=',$user->id)->withCount('likes')->get()->sortByDesc('id');
+//        $spots = Spot::where('user_id','=',$user->id)->get();
+
+/*$spots = DB::table('spots')
             ->select(db::raw('spots.id,spots.title,picture_name,description_post,count(likes.id_user) as likes_count'))
             ->join('photos','spots.id','=','photos.spot_id')
             ->leftjoin('likes','spots.id','=','likes.id_spot')
@@ -33,6 +36,7 @@ class MyProfileController extends Controller
             ->get();
 
         //dd ($spots);
+*/
 
 //      look fr friends
         $friends1 = DB::table('friends')
