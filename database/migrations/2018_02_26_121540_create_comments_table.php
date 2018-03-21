@@ -15,8 +15,8 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->timestamps();
-            $table->integer('id_user');
-            $table->integer('id_spot');
+            $table->integer('id_user')->unsigned();
+            $table->integer('id_spot')->unsigned();
             $table->text('content');
             $table->foreign('id_user')->references('id')->on('users');
             $table->foreign('id_spot')->references('id')->on('spots');
