@@ -6,7 +6,6 @@ use App\Http\Requests\NewSpotValidation;
 use App\Photo;
 use App\Spot;
 use Illuminate\Support\Facades\File;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\CssSelector\Exception\InternalErrorException;
 
@@ -22,7 +21,7 @@ class NewSpotController extends Controller
 
     /**
      * @param NewSpotValidation $request
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Http\RedirectResponse
      * @throws InternalErrorException
      */
     public function store(NewSpotValidation $request)
@@ -32,11 +31,10 @@ class NewSpotController extends Controller
         if ($file) {
             Storage::disk('local')->put('public/spots/' .$filename, File::get($file));
         }
-
         $spot = new Spot();
         $spot->setAttribute('description_post', $request->input('description'));
         $spot->setAttribute('title', $request->input('title'));
-        $spot->setAttribute('user_id', 1);
+        $spot->setAttribute('user_id', $request->input('user_id'));
 
         if ($spot->save()) {
             $picture = new Photo();

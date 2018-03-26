@@ -14,7 +14,27 @@ class LoginController extends Controller
 
     public function store()
     {
-        return view('homePage');
+
+        $Result = auth()->attempt([
+            'user_name' => request('user_name'),
+            'password' => request('password'),
+        ]);
+
+        if($Result) {
+            //return view('homePage');
+            return redirect()->route('homePage');
+        }
+        return back()->withErrors([
+            'user_name' => "Vos identifiants sont incorrects."
+
+        ]);
+
     }
 
-}
+        public function logout()
+        {
+            auth()->logout();
+            return redirect()->route('login');
+        }
+
+    }

@@ -284,12 +284,12 @@ li
   color: pink;
 }
 
-#menu_lien_share:link, #menu_lien_share:visited, #menu_lien_share:active
+.menu_lien_share:link, .menu_lien_share:visited, .menu_lien_share:active
 {
  color: black;
 }
 
- #menu_lien_share:hover
+.menu_lien_share:hover
  {
   color: rgb(74, 187, 252);
  }
@@ -427,4 +427,24 @@ padding-left: 20px;
 
 .invalid-feedback{
   color: red;
+}
+
+.menu_user:link, .menu_user:visited, .menu_user:active
+{
+    color: black;
+}
+
+.menu_user:hover
+{
+    color: pink;
+}
+
+.like_user:link, .like_user:visited, .like_user:active
+{
+    color: #FA48A1;
+}
+
+.like_user:hover
+{
+    color: black;
 }
