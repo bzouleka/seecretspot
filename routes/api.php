@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Resources\UserCollection;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,13 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/auth', function (Request $request) {
     return $request->user();
 });
+
+Route::resources([
+    'users' => 'UserApiController',
+    'spots' => 'SpotApiController',
+    'pics' => 'PicApiController',
+    'friends' => 'FriendApiController'
+]);
