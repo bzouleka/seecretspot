@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\UserCollection;
 use App\Http\Resources\UserResource;
-use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
+use App\User;
 
 class UserApiController extends Controller
 {
@@ -69,9 +69,16 @@ class UserApiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        if(isset($request->latitude))
+        {
+            $user->setAttribute('latitude',$request->input('latitude'));
+        }
+        if(isset($request->longitude))
+        {
+            $user->setAttribute('longitude',$request->input('longitude'));
+        }
     }
 
     /**

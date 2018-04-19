@@ -70,7 +70,7 @@ class FriendApiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
