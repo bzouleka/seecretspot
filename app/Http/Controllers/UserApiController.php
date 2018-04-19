@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\UserCollection;
 use App\Http\Resources\UserResource;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\User;
 
@@ -79,6 +80,10 @@ class UserApiController extends Controller
         {
             $user->setAttribute('longitude',$request->input('longitude'));
         }
+
+        $user->update();
+
+        return response()->json($user, JsonResponse::HTTP_OK);
     }
 
     /**
